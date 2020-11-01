@@ -1,0 +1,454 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+vo-g1.msk.21-school.ru
+Darwin 18.7.0 x86_64
+$> date
+воскресенье,  1 ноября 2020 г. 19:39:03 (MSK)
+$> gcc --version
+Apple clang version 11.0.0 (clang-1100.0.33.17)
+Target: x86_64-apple-darwin18.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+$> clang --version
+Apple clang version 11.0.0 (clang-1100.0.33.17)
+Target: x86_64-apple-darwin18.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+
+= libft.h=======================================================================
+$> norminette libft.h | grep -E '(Error|Warning)'
+Error: global scope bad aligned
+Error: file must end with a single empty line
+Error (line 15): wrong number of spaces in preprocessor indentation
+Error (line 17): wrong number of spaces in preprocessor indentation
+Error (line 24): multiple empty lines
+Norme check failed
+
+= Compiling libft ==============================================================
+$> make re
+rm -f ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memccpy.o ft_memmove.o ft_memchr.o ft_memcmp.o ft_strlcpy.o ft_strlcat.o ft_strchr.o ft_strrchr.o ft_strnstr.o ft_strncmp.o ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o ft_toupper.o ft_tolower.o ft_atoi.o ft_calloc.o ft_strdup.o
+rm -f libft.a
+gcc -Wall -Wextra -Werror -c ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c ft_memchr.c ft_memcmp.c ft_strlcpy.c ft_strlcat.c ft_strchr.c ft_strrchr.c ft_strnstr.c ft_strncmp.c ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_toupper.c ft_tolower.c ft_atoi.c ft_calloc.c ft_strdup.c
+ar rc libft.a ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memccpy.o ft_memmove.o ft_memchr.o ft_memcmp.o ft_strlcpy.o ft_strlcat.o ft_strchr.o ft_strrchr.o ft_strnstr.o ft_strncmp.o ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o ft_toupper.o ft_tolower.o ft_atoi.o ft_calloc.o ft_strdup.o
+
+$> ls -la libft.a
+-rw-r--r--  1 agigi  student  20664  1 ноя 19:39 /Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir/libft.a
+
+= Part1_functions ==============================================================
+
+= ft_atoi ======================================================================
+$> norminette ft_atoi.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_atoi/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_atoi/main.c:47:19: error: implicit declaration of function 'ft_atoi' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+                ft_print_result(ft_atoi("0"));
+                                ^
+1 error generated.
+
+= ft_bzero =====================================================================
+$> norminette ft_bzero.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_bzero/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+
+Diff OK :D
+
+= ft_calloc ====================================================================
+$> norminette ft_calloc.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_calloc/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_calloc/main.c:26:17: error: implicit declaration of function 'ft_calloc' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+                str = (char *)ft_calloc(30, sizeof(char));
+                              ^
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_calloc/main.c:26:17: note: did you mean 'calloc'?
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/malloc/_malloc.h:41:7: note: 'calloc' declared here
+void    *calloc(size_t __count, size_t __size) __result_use_check __alloc_size(1,2);
+         ^
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_calloc/main.c:26:9: error: cast to 'char *' from smaller integer type 'int' [-Werror,-Wint-to-pointer-cast]
+                str = (char *)ft_calloc(30, sizeof(char));
+                      ^
+2 errors generated.
+
+= ft_isalnum ===================================================================
+$> norminette ft_isalnum.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isalnum/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isalnum/main.c:30:19: error: implicit declaration of function 'ft_isalnum' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+                ft_print_result(ft_isalnum(start));
+                                ^
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isalnum/main.c:30:19: note: did you mean 'isalnum'?
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/_ctype.h:212:1: note: 'isalnum' declared here
+isalnum(int _c)
+^
+1 error generated.
+
+= ft_isalpha ===================================================================
+$> norminette ft_isalpha.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isalpha/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isalpha/main.c:30:19: error: implicit declaration of function 'ft_isalpha' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+                ft_print_result(ft_isalpha(start));
+                                ^
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isalpha/main.c:30:19: note: did you mean 'isalpha'?
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/_ctype.h:218:1: note: 'isalpha' declared here
+isalpha(int _c)
+^
+1 error generated.
+
+= ft_isascii ===================================================================
+$> norminette ft_isascii.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isascii/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isascii/main.c:30:19: error: implicit declaration of function 'ft_isascii' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+                ft_print_result(ft_isascii(start));
+                                ^
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isascii/main.c:30:19: note: did you mean 'isascii'?
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/_ctype.h:135:1: note: 'isascii' declared here
+isascii(int _c)
+^
+1 error generated.
+
+= ft_isdigit ===================================================================
+$> norminette ft_isdigit.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isdigit/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isdigit/main.c:30:19: error: implicit declaration of function 'ft_isdigit' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+                ft_print_result(ft_isdigit(start));
+                                ^
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isdigit/main.c:30:19: note: did you mean 'isdigit'?
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/_ctype.h:237:1: note: 'isdigit' declared here
+isdigit(int _c)
+^
+1 error generated.
+
+= ft_isprint ===================================================================
+$> norminette ft_isprint.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isprint/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isprint/main.c:30:19: error: implicit declaration of function 'ft_isprint' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+                ft_print_result(ft_isprint(start));
+                                ^
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isprint/main.c:30:19: note: did you mean 'isprint'?
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/_ctype.h:255:1: note: 'isprint' declared here
+isprint(int _c)
+^
+1 error generated.
+
+= ft_memccpy ===================================================================
+$> norminette ft_memccpy.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memccpy/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memccpy/main.c:33:15: error: implicit declaration of function 'ft_memccpy' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+        if (!(dest = ft_memccpy(dest, src, c, n)))
+                     ^
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memccpy/main.c:33:15: note: did you mean 'ft_memcpy'?
+/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir/libft.h:22:7: note: 'ft_memcpy' declared here
+void *ft_memcpy (void *dest, const void *src, size_t n);
+      ^
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memccpy/main.c:33:13: error: incompatible integer to pointer conversion assigning to 'void *' from 'int' [-Werror,-Wint-conversion]
+        if (!(dest = ft_memccpy(dest, src, c, n)))
+                   ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2 errors generated.
+
+= ft_memchr ====================================================================
+$> norminette ft_memchr.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memchr/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memchr/main.c:33:8: error: implicit declaration of function 'ft_memchr' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+        str = ft_memchr(s, c, n);
+              ^
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memchr/main.c:33:8: note: did you mean 'ft_memcpy'?
+/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir/libft.h:22:7: note: 'ft_memcpy' declared here
+void *ft_memcpy (void *dest, const void *src, size_t n);
+      ^
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memchr/main.c:33:6: error: incompatible integer to pointer conversion assigning to 'const char *' from 'int' [-Werror,-Wint-conversion]
+        str = ft_memchr(s, c, n);
+            ^ ~~~~~~~~~~~~~~~~~~
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memchr/main.c:61:16: error: implicit declaration of function 'ft_memchr' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+                printf("%s", ft_memchr(tab, -1, 7));
+                             ^
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memchr/main.c:61:16: error: format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]
+                printf("%s", ft_memchr(tab, -1, 7));
+                        ~~   ^~~~~~~~~~~~~~~~~~~~~
+                        %d
+4 errors generated.
+
+= ft_memcmp ====================================================================
+$> norminette ft_memcmp.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memcmp/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memcmp/main.c:36:19: error: implicit declaration of function 'ft_memcmp' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+                ft_print_result(ft_memcmp("salut", "salut", 5));
+                                ^
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memcmp/main.c:36:19: note: did you mean 'ft_memcpy'?
+/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir/libft.h:22:7: note: 'ft_memcpy' declared here
+void *ft_memcpy (void *dest, const void *src, size_t n);
+      ^
+1 error generated.
+
+= ft_memcpy ====================================================================
+$> norminette ft_memcpy.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memcpy/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+
+Diff OK :D
+
+= ft_memmove ===================================================================
+$> norminette ft_memmove.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memmove/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memmove/main.c:20:14: error: implicit declaration of function 'ft_memmove' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+        if (dest != ft_memmove(dest, src, n))
+                    ^
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memmove/main.c:20:14: note: did you mean 'memmove'?
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/string.h:73:7: note: 'memmove' declared here
+void    *memmove(void *__dst, const void *__src, size_t __len);
+         ^
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memmove/main.c:20:11: error: comparison between pointer and integer ('void *' and 'int') [-Werror]
+        if (dest != ft_memmove(dest, src, n))
+            ~~~~ ^  ~~~~~~~~~~~~~~~~~~~~~~~~
+2 errors generated.
+
+= ft_memset ====================================================================
+$> norminette ft_memset.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memset/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./user_exe 04
+$> diff -U 3 user_output_test04 test04.output
+
+Diff OK :D
+
+= ft_strchr ====================================================================
+$> norminette ft_strchr.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strchr/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strchr/main.c:32:14: error: implicit declaration of function 'ft_strchr' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+        if (!(str = ft_strchr(s, c)))
+                    ^
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strchr/main.c:32:12: error: incompatible integer to pointer conversion assigning to 'char *' from 'int' [-Werror,-Wint-conversion]
+        if (!(str = ft_strchr(s, c)))
+                  ^ ~~~~~~~~~~~~~~~
+2 errors generated.
+
+= ft_strdup ====================================================================
+$> norminette ft_strdup.c | grep -E '(Error|Warning)'
+Error (line 21): Empty line
+Norme check failed
+$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strdup/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strdup/main.c:38:19: error: implicit declaration of function 'ft_strdup' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+                if (!(str_dup = ft_strdup(str)))
+                                ^
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strdup/main.c:38:17: error: incompatible integer to pointer conversion assigning to 'char *' from 'int' [-Werror,-Wint-conversion]
+                if (!(str_dup = ft_strdup(str)))
+                              ^ ~~~~~~~~~~~~~~
+2 errors generated.
+
+= ft_strlcat ===================================================================
+$> norminette ft_strlcat.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcat/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcat/main.c:30:18: error: implicit declaration of function 'ft_strlcat' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+        ft_print_result(ft_strlcat(dest, src, size));
+                        ^
+1 error generated.
+
+= ft_strlcpy ===================================================================
+$> norminette ft_strlcpy.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcpy/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcpy/main.c:31:18: error: implicit declaration of function 'ft_strlcpy' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+        ft_print_result(ft_strlcpy(dest, src, size));
+                        ^
+1 error generated.
+
+= ft_strlen ====================================================================
+$> norminette ft_strlen.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlen/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./user_exe 04
+$> diff -U 3 user_output_test04 test04.output
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./user_exe 05
+$> diff -U 3 user_output_test05 test05.output
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./user_exe 06
+$> diff -U 3 user_output_test06 test06.output
+
+Diff OK :D
+
+= ft_strncmp ===================================================================
+$> norminette ft_strncmp.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strncmp/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strncmp/main.c:36:19: error: implicit declaration of function 'ft_strncmp' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+                ft_print_result(ft_strncmp("salut", "salut", 5));
+                                ^
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strncmp/main.c:36:19: note: did you mean 'strncmp'?
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/string.h:84:6: note: 'strncmp' declared here
+int      strncmp(const char *__s1, const char *__s2, size_t __n);
+         ^
+1 error generated.
+
+= ft_strnstr ===================================================================
+$> norminette ft_strnstr.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strnstr/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strnstr/main.c:31:14: error: implicit declaration of function 'ft_strnstr' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+        if (!(str = ft_strnstr(big, little, len)))
+                    ^
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strnstr/main.c:31:12: error: incompatible integer to pointer conversion assigning to 'const char *' from 'int' [-Werror,-Wint-conversion]
+        if (!(str = ft_strnstr(big, little, len)))
+                  ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2 errors generated.
+
+= ft_strrchr ===================================================================
+$> norminette ft_strrchr.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strrchr/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strrchr/main.c:32:14: error: implicit declaration of function 'ft_strrchr' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+        if (!(str = ft_strrchr(s, c)))
+                    ^
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strrchr/main.c:32:14: note: did you mean 'strrchr'?
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/string.h:87:7: note: 'strrchr' declared here
+char    *strrchr(const char *__s, int __c);
+         ^
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strrchr/main.c:32:12: error: incompatible integer to pointer conversion assigning to 'char *' from 'int' [-Werror,-Wint-conversion]
+        if (!(str = ft_strrchr(s, c)))
+                  ^ ~~~~~~~~~~~~~~~~
+2 errors generated.
+
+= ft_tolower ===================================================================
+$> norminette ft_tolower.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_tolower/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_tolower/main.c:24:7: error: implicit declaration of function 'ft_tolower' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+                c = ft_tolower(start);
+                    ^
+1 error generated.
+
+= ft_toupper ===================================================================
+$> norminette ft_toupper.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_toupper/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_toupper/main.c:23:7: error: implicit declaration of function 'ft_toupper' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+                c = ft_toupper(start);
+                    ^
+1 error generated.
+
+= Part2_functions ==============================================================
+
+= ft_itoa ======================================================================
+Nothing turned in
+
+= ft_putchar_fd ================================================================
+Nothing turned in
+
+= ft_putendl_fd ================================================================
+Nothing turned in
+
+= ft_putnbr_fd =================================================================
+Nothing turned in
+
+= ft_putstr_fd =================================================================
+Nothing turned in
+
+= ft_split =====================================================================
+Nothing turned in
+
+= ft_strjoin ===================================================================
+Nothing turned in
+
+= ft_strmapi ===================================================================
+Nothing turned in
+
+= ft_strtrim ===================================================================
+Nothing turned in
+
+= ft_substr ====================================================================
+Nothing turned in
+
+= Bonus_functions ==============================================================
+
+= ft_lstadd_back ===============================================================
+Nothing turned in
+
+= ft_lstadd_front ==============================================================
+Nothing turned in
+
+= ft_lstclear ==================================================================
+Nothing turned in
+
+= ft_lstdelone =================================================================
+Nothing turned in
+
+= ft_lstiter ===================================================================
+Nothing turned in
+
+= ft_lstlast ===================================================================
+Nothing turned in
+
+= ft_lstmap ====================================================================
+Nothing turned in
+
+= ft_lstnew ====================================================================
+Nothing turned in
+
+= ft_lstsize ===================================================================
+Nothing turned in

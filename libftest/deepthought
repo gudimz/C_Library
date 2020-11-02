@@ -1,28 +1,23 @@
 = Host-specific information ====================================================
 $> hostname; uname -msr
-vo-g1.msk.21-school.ru
-Darwin 18.7.0 x86_64
+hp
+Linux 5.4.0-52-generic x86_64
 $> date
-воскресенье,  1 ноября 2020 г. 19:39:03 (MSK)
+Вт 03 ноя 2020 00:48:29 MSK
 $> gcc --version
-Apple clang version 11.0.0 (clang-1100.0.33.17)
-Target: x86_64-apple-darwin18.7.0
-Thread model: posix
-InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
+Copyright (C) 2019 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
 $> clang --version
-Apple clang version 11.0.0 (clang-1100.0.33.17)
-Target: x86_64-apple-darwin18.7.0
+clang version 10.0.0-4ubuntu1 
+Target: x86_64-pc-linux-gnu
 Thread model: posix
-InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+InstalledDir: /usr/bin
 
 = libft.h=======================================================================
 $> norminette libft.h | grep -E '(Error|Warning)'
-Error: global scope bad aligned
-Error: file must end with a single empty line
-Error (line 15): wrong number of spaces in preprocessor indentation
-Error (line 17): wrong number of spaces in preprocessor indentation
-Error (line 24): multiple empty lines
-Norme check failed
 
 = Compiling libft ==============================================================
 $> make re
@@ -32,296 +27,994 @@ gcc -Wall -Wextra -Werror -c ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_m
 ar rc libft.a ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memccpy.o ft_memmove.o ft_memchr.o ft_memcmp.o ft_strlcpy.o ft_strlcat.o ft_strchr.o ft_strrchr.o ft_strnstr.o ft_strncmp.o ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o ft_toupper.o ft_tolower.o ft_atoi.o ft_calloc.o ft_strdup.o
 
 $> ls -la libft.a
--rw-r--r--  1 agigi  student  20664  1 ноя 19:39 /Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir/libft.a
+-rw-rw-r-- 1 gudimz gudimz 38532 ноя  3 00:48 /home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir/libft.a
 
 = Part1_functions ==============================================================
 
 = ft_atoi ======================================================================
 $> norminette ft_atoi.c | grep -E '(Error|Warning)'
-$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_atoi/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+$> clang -Wextra -Wall -Werror /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_atoi/main.c -L/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir
 
-/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_atoi/main.c:47:19: error: implicit declaration of function 'ft_atoi' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
-                ft_print_result(ft_atoi("0"));
-                                ^
-1 error generated.
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_atoi/user_output_test01	2020-11-03 00:48:30.637781296 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_atoi/test01.output	2020-11-02 01:37:36.157813000 +0300$
+@@ -0,0 +1 @@$
++0$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_atoi/user_output_test02	2020-11-03 00:48:30.645781582 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_atoi/test02.output	2020-11-02 01:37:36.157813000 +0300$
+@@ -0,0 +1 @@$
++546$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_atoi/user_output_test03	2020-11-03 00:48:30.657782011 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_atoi/test03.output	2020-11-02 01:37:36.157813000 +0300$
+@@ -0,0 +1 @@$
++-4886$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 4 ===================================================
+$> ./user_exe 04
+$> diff -U 3 user_output_test04 test04.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_atoi/user_output_test04	2020-11-03 00:48:30.665782297 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_atoi/test04.output	2020-11-02 01:37:36.157813000 +0300$
+@@ -0,0 +1 @@$
++548$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 5 ===================================================
+$> ./user_exe 05
+$> diff -U 3 user_output_test05 test05.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_atoi/user_output_test05	2020-11-03 00:48:30.677782727 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_atoi/test05.output	2020-11-02 01:37:36.157813000 +0300$
+@@ -0,0 +1 @@$
++54854$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 6 ===================================================
+$> ./user_exe 06
+$> diff -U 3 user_output_test06 test06.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_atoi/user_output_test06	2020-11-03 00:48:30.685783013 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_atoi/test06.output	2020-11-02 01:37:36.157813000 +0300$
+@@ -0,0 +1 @@$
++74$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 7 ===================================================
+$> ./user_exe 07
+$> diff -U 3 user_output_test07 test07.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_atoi/user_output_test07	2020-11-03 00:48:30.697783441 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_atoi/test07.output	2020-11-02 01:37:36.157813000 +0300$
+@@ -0,0 +1 @@$
++0$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 8 ===================================================
+$> ./user_exe 08
+$> diff -U 3 user_output_test08 test08.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_atoi/user_output_test08	2020-11-03 00:48:30.709783870 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_atoi/test08.output	2020-11-02 01:37:36.157813000 +0300$
+@@ -0,0 +1 @@$
++0$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 9 ===================================================
+$> ./user_exe 09
+$> diff -U 3 user_output_test09 test09.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_atoi/user_output_test09	2020-11-03 00:48:30.721784299 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_atoi/test09.output	2020-11-02 01:37:36.157813000 +0300$
+@@ -0,0 +1 @@$
++0$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 10 ==================================================
+$> ./user_exe 10
+$> diff -U 3 user_output_test10 test10.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_atoi/user_output_test10	2020-11-03 00:48:30.733784728 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_atoi/test10.output	2020-11-02 01:37:36.157813000 +0300$
+@@ -0,0 +1 @@$
++0$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 11 ==================================================
+$> ./user_exe 11
+$> diff -U 3 user_output_test11 test11.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_atoi/user_output_test11	2020-11-03 00:48:30.741785015 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_atoi/test11.output	2020-11-02 01:37:36.157813000 +0300$
+@@ -0,0 +1 @@$
++47$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 12 ==================================================
+$> ./user_exe 12
+$> diff -U 3 user_output_test12 test12.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_atoi/user_output_test12	2020-11-03 00:48:30.753785444 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_atoi/test12.output	2020-11-02 01:37:36.157813000 +0300$
+@@ -0,0 +1 @@$
++-47$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 13 ==================================================
+$> ./user_exe 13
+$> diff -U 3 user_output_test13 test13.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_atoi/user_output_test13	2020-11-03 00:48:30.765785872 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_atoi/test13.output	2020-11-02 01:37:36.157813000 +0300$
+@@ -0,0 +1 @@$
++0$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 14 ==================================================
+$> ./user_exe 14
+$> diff -U 3 user_output_test14 test14.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_atoi/user_output_test14	2020-11-03 00:48:30.773786158 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_atoi/test14.output	2020-11-02 01:37:36.157813000 +0300$
+@@ -0,0 +1 @@$
++469$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 15 ==================================================
+$> ./user_exe 15
+$> diff -U 3 user_output_test15 test15.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_atoi/user_output_test15	2020-11-03 00:48:30.785786587 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_atoi/test15.output	2020-11-02 01:37:36.157813000 +0300$
+@@ -0,0 +1 @@$
++-2147483648$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 16 ==================================================
+$> ./user_exe 16
+$> diff -U 3 user_output_test16 test16.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_atoi/user_output_test16	2020-11-03 00:48:30.797787016 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_atoi/test16.output	2020-11-02 01:37:36.157813000 +0300$
+@@ -0,0 +1 @@$
++2147483647$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 17 ==================================================
+$> ./user_exe 17
+$> diff -U 3 user_output_test17 test17.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_atoi/user_output_test17	2020-11-03 00:48:30.809787446 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_atoi/test17.output	2020-11-02 01:37:36.157813000 +0300$
+@@ -0,0 +1 @@$
++0$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 18 ==================================================
+$> ./user_exe 18
+$> diff -U 3 user_output_test18 test18.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_atoi/user_output_test18	2020-11-03 00:48:30.821787875 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_atoi/test18.output	2020-11-02 01:37:36.157813000 +0300$
+@@ -0,0 +1 @@$
++-46$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 19 ==================================================
+$> ./user_exe 19
+$> diff -U 3 user_output_test19 test19.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_atoi/user_output_test19	2020-11-03 00:48:30.829788161 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_atoi/test19.output	2020-11-02 01:37:36.157813000 +0300$
+@@ -0,0 +1 @@$
++0$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
 
 = ft_bzero =====================================================================
 $> norminette ft_bzero.c | grep -E '(Error|Warning)'
-$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_bzero/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+$> clang -Wextra -Wall -Werror /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_bzero/main.c -L/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir
 
 = Test 1 ===================================================
 $> ./user_exe 01
 $> diff -U 3 user_output_test01 test01.output
+M-PM-^TM-PM-2M-PM->M-PM-8M-QM-^GM-PM-=M-QM-^KM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-QM-^K /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_bzero/user_output_test01 M-PM-8 /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_bzero/test01.output M-QM-^@M-PM-0M-PM-7M-PM-;M-PM-8M-QM-^GM-PM-0M-QM-^NM-QM-^BM-QM-^AM-QM-^O$
 
-Diff OK :D
+Diff KO :(
 = Test 2 ===================================================
 $> ./user_exe 02
 $> diff -U 3 user_output_test02 test02.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_bzero/user_output_test02	2020-11-03 00:48:31.037795595 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_bzero/test02.output	2020-11-02 01:37:36.157813000 +0300$
+@@ -0,0 +1 @@$
++eeeee$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
 
-Diff OK :D
+Diff KO :(
 
 = ft_calloc ====================================================================
 $> norminette ft_calloc.c | grep -E '(Error|Warning)'
-$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_calloc/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+$> clang -Wextra -Wall -Werror /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_calloc/main.c -L/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir
 
-/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_calloc/main.c:26:17: error: implicit declaration of function 'ft_calloc' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
-                str = (char *)ft_calloc(30, sizeof(char));
-                              ^
-/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_calloc/main.c:26:17: note: did you mean 'calloc'?
-/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/malloc/_malloc.h:41:7: note: 'calloc' declared here
-void    *calloc(size_t __count, size_t __size) __result_use_check __alloc_size(1,2);
-         ^
-/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_calloc/main.c:26:9: error: cast to 'char *' from smaller integer type 'int' [-Werror,-Wint-to-pointer-cast]
-                str = (char *)ft_calloc(30, sizeof(char));
-                      ^
-2 errors generated.
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+M-PM-^TM-PM-2M-PM->M-PM-8M-QM-^GM-PM-=M-QM-^KM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-QM-^K /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_calloc/user_output_test01 M-PM-8 /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_calloc/test01.output M-QM-^@M-PM-0M-PM-7M-PM-;M-PM-8M-QM-^GM-PM-0M-QM-^NM-QM-^BM-QM-^AM-QM-^O$
+
+Diff KO :(
 
 = ft_isalnum ===================================================================
 $> norminette ft_isalnum.c | grep -E '(Error|Warning)'
-$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isalnum/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+$> clang -Wextra -Wall -Werror /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isalnum/main.c -L/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir
 
-/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isalnum/main.c:30:19: error: implicit declaration of function 'ft_isalnum' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
-                ft_print_result(ft_isalnum(start));
-                                ^
-/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isalnum/main.c:30:19: note: did you mean 'isalnum'?
-/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/_ctype.h:212:1: note: 'isalnum' declared here
-isalnum(int _c)
-^
-1 error generated.
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isalnum/user_output_test01	2020-11-03 00:48:31.377807746 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isalnum/test01.output	2020-11-02 01:37:36.157813000 +0300$
+@@ -0,0 +1 @@$
++000000000000000000000000000000000000000000000000$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isalnum/user_output_test02	2020-11-03 00:48:31.385808032 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isalnum/test02.output	2020-11-02 01:37:36.157813000 +0300$
+@@ -0,0 +1 @@$
++1111111111$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isalnum/user_output_test03	2020-11-03 00:48:31.401808603 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isalnum/test03.output	2020-11-02 01:37:36.157813000 +0300$
+@@ -0,0 +1 @@$
++0000000$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 4 ===================================================
+$> ./user_exe 04
+$> diff -U 3 user_output_test04 test04.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isalnum/user_output_test04	2020-11-03 00:48:31.409808889 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isalnum/test04.output	2020-11-02 01:37:36.157813000 +0300$
+@@ -0,0 +1 @@$
++11111111111111111111111111$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 5 ===================================================
+$> ./user_exe 05
+$> diff -U 3 user_output_test05 test05.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isalnum/user_output_test05	2020-11-03 00:48:31.429809604 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isalnum/test05.output	2020-11-02 01:37:36.157813000 +0300$
+@@ -0,0 +1 @@$
++000000$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 6 ===================================================
+$> ./user_exe 06
+$> diff -U 3 user_output_test06 test06.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isalnum/user_output_test06	2020-11-03 00:48:31.437809890 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isalnum/test06.output	2020-11-02 01:37:36.157813000 +0300$
+@@ -0,0 +1 @@$
++11111111111111111111111111$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 7 ===================================================
+$> ./user_exe 07
+$> diff -U 3 user_output_test07 test07.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isalnum/user_output_test07	2020-11-03 00:48:31.449810318 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isalnum/test07.output	2020-11-02 01:37:36.157813000 +0300$
+@@ -0,0 +1 @@$
++00000$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
 
 = ft_isalpha ===================================================================
 $> norminette ft_isalpha.c | grep -E '(Error|Warning)'
-$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isalpha/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+$> clang -Wextra -Wall -Werror /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isalpha/main.c -L/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir
 
-/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isalpha/main.c:30:19: error: implicit declaration of function 'ft_isalpha' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
-                ft_print_result(ft_isalpha(start));
-                                ^
-/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isalpha/main.c:30:19: note: did you mean 'isalpha'?
-/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/_ctype.h:218:1: note: 'isalpha' declared here
-isalpha(int _c)
-^
-1 error generated.
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isalpha/user_output_test01	2020-11-03 00:48:31.621816465 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isalpha/test01.output	2020-11-02 01:37:36.157813000 +0300$
+@@ -0,0 +1 @@$
++000000000000000000000000000000000000000000000000$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isalpha/user_output_test02	2020-11-03 00:48:31.629816751 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isalpha/test02.output	2020-11-02 01:37:36.157813000 +0300$
+@@ -0,0 +1 @@$
++0000000000$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isalpha/user_output_test03	2020-11-03 00:48:31.637817036 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isalpha/test03.output	2020-11-02 01:37:36.157813000 +0300$
+@@ -0,0 +1 @@$
++0000000$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 4 ===================================================
+$> ./user_exe 04
+$> diff -U 3 user_output_test04 test04.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isalpha/user_output_test04	2020-11-03 00:48:31.649817465 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isalpha/test04.output	2020-11-02 01:37:36.157813000 +0300$
+@@ -0,0 +1 @@$
++11111111111111111111111111$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 5 ===================================================
+$> ./user_exe 05
+$> diff -U 3 user_output_test05 test05.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isalpha/user_output_test05	2020-11-03 00:48:31.657817751 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isalpha/test05.output	2020-11-02 01:37:36.157813000 +0300$
+@@ -0,0 +1 @@$
++000000$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 6 ===================================================
+$> ./user_exe 06
+$> diff -U 3 user_output_test06 test06.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isalpha/user_output_test06	2020-11-03 00:48:31.665818037 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isalpha/test06.output	2020-11-02 01:37:36.157813000 +0300$
+@@ -0,0 +1 @@$
++11111111111111111111111111$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 7 ===================================================
+$> ./user_exe 07
+$> diff -U 3 user_output_test07 test07.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isalpha/user_output_test07	2020-11-03 00:48:31.673818323 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isalpha/test07.output	2020-11-02 01:37:36.157813000 +0300$
+@@ -0,0 +1 @@$
++00000$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
 
 = ft_isascii ===================================================================
 $> norminette ft_isascii.c | grep -E '(Error|Warning)'
-$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isascii/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+$> clang -Wextra -Wall -Werror /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isascii/main.c -L/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir
 
-/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isascii/main.c:30:19: error: implicit declaration of function 'ft_isascii' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
-                ft_print_result(ft_isascii(start));
-                                ^
-/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isascii/main.c:30:19: note: did you mean 'isascii'?
-/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/_ctype.h:135:1: note: 'isascii' declared here
-isascii(int _c)
-^
-1 error generated.
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isascii/user_output_test01	2020-11-03 00:48:31.821823612 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isascii/test01.output	2020-11-02 01:37:36.157813000 +0300$
+@@ -0,0 +1 @@$
++111111111111111111111111111111111111111111111111$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isascii/user_output_test02	2020-11-03 00:48:31.833824041 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isascii/test02.output	2020-11-02 01:37:36.157813000 +0300$
+@@ -0,0 +1 @@$
++1111111111$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isascii/user_output_test03	2020-11-03 00:48:31.841824327 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isascii/test03.output	2020-11-02 01:37:36.157813000 +0300$
+@@ -0,0 +1 @@$
++1111111$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 4 ===================================================
+$> ./user_exe 04
+$> diff -U 3 user_output_test04 test04.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isascii/user_output_test04	2020-11-03 00:48:31.853824755 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isascii/test04.output	2020-11-02 01:37:36.157813000 +0300$
+@@ -0,0 +1 @@$
++11111111111111111111111111$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 5 ===================================================
+$> ./user_exe 05
+$> diff -U 3 user_output_test05 test05.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isascii/user_output_test05	2020-11-03 00:48:31.865825184 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isascii/test05.output	2020-11-02 01:37:36.157813000 +0300$
+@@ -0,0 +1 @@$
++111111$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 6 ===================================================
+$> ./user_exe 06
+$> diff -U 3 user_output_test06 test06.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isascii/user_output_test06	2020-11-03 00:48:31.877825613 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isascii/test06.output	2020-11-02 01:37:36.157813000 +0300$
+@@ -0,0 +1 @@$
++11111111111111111111111111$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 7 ===================================================
+$> ./user_exe 07
+$> diff -U 3 user_output_test07 test07.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isascii/user_output_test07	2020-11-03 00:48:31.889826042 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isascii/test07.output	2020-11-02 01:37:36.157813000 +0300$
+@@ -0,0 +1 @@$
++11111$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
 
 = ft_isdigit ===================================================================
 $> norminette ft_isdigit.c | grep -E '(Error|Warning)'
-$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isdigit/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+$> clang -Wextra -Wall -Werror /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isdigit/main.c -L/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir
 
-/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isdigit/main.c:30:19: error: implicit declaration of function 'ft_isdigit' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
-                ft_print_result(ft_isdigit(start));
-                                ^
-/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isdigit/main.c:30:19: note: did you mean 'isdigit'?
-/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/_ctype.h:237:1: note: 'isdigit' declared here
-isdigit(int _c)
-^
-1 error generated.
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isdigit/user_output_test01	2020-11-03 00:48:32.041831473 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isdigit/test01.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1 @@$
++000000000000000000000000000000000000000000000000$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isdigit/user_output_test02	2020-11-03 00:48:32.053831902 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isdigit/test02.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1 @@$
++1111111111$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isdigit/user_output_test03	2020-11-03 00:48:32.065832331 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isdigit/test03.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1 @@$
++0000000$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 4 ===================================================
+$> ./user_exe 04
+$> diff -U 3 user_output_test04 test04.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isdigit/user_output_test04	2020-11-03 00:48:32.077832759 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isdigit/test04.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1 @@$
++00000000000000000000000000$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 5 ===================================================
+$> ./user_exe 05
+$> diff -U 3 user_output_test05 test05.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isdigit/user_output_test05	2020-11-03 00:48:32.089833188 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isdigit/test05.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1 @@$
++000000$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 6 ===================================================
+$> ./user_exe 06
+$> diff -U 3 user_output_test06 test06.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isdigit/user_output_test06	2020-11-03 00:48:32.101833616 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isdigit/test06.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1 @@$
++00000000000000000000000000$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 7 ===================================================
+$> ./user_exe 07
+$> diff -U 3 user_output_test07 test07.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isdigit/user_output_test07	2020-11-03 00:48:32.113834045 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isdigit/test07.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1 @@$
++00000$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
 
 = ft_isprint ===================================================================
 $> norminette ft_isprint.c | grep -E '(Error|Warning)'
-$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isprint/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+$> clang -Wextra -Wall -Werror /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isprint/main.c -L/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir
 
-/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isprint/main.c:30:19: error: implicit declaration of function 'ft_isprint' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
-                ft_print_result(ft_isprint(start));
-                                ^
-/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isprint/main.c:30:19: note: did you mean 'isprint'?
-/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/_ctype.h:255:1: note: 'isprint' declared here
-isprint(int _c)
-^
-1 error generated.
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isprint/user_output_test01	2020-11-03 00:48:32.261839331 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isprint/test01.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1 @@$
++000000000000000000000000000000001111111111111111$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isprint/user_output_test02	2020-11-03 00:48:32.277839903 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isprint/test02.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1 @@$
++1111111111$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isprint/user_output_test03	2020-11-03 00:48:32.289840332 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isprint/test03.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1 @@$
++1111111$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 4 ===================================================
+$> ./user_exe 04
+$> diff -U 3 user_output_test04 test04.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isprint/user_output_test04	2020-11-03 00:48:32.297840617 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isprint/test04.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1 @@$
++11111111111111111111111111$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 5 ===================================================
+$> ./user_exe 05
+$> diff -U 3 user_output_test05 test05.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isprint/user_output_test05	2020-11-03 00:48:32.309841046 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isprint/test05.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1 @@$
++111111$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 6 ===================================================
+$> ./user_exe 06
+$> diff -U 3 user_output_test06 test06.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isprint/user_output_test06	2020-11-03 00:48:32.321841474 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isprint/test06.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1 @@$
++11111111111111111111111111$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 7 ===================================================
+$> ./user_exe 07
+$> diff -U 3 user_output_test07 test07.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isprint/user_output_test07	2020-11-03 00:48:32.337842046 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_isprint/test07.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1 @@$
++11110$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
 
 = ft_memccpy ===================================================================
 $> norminette ft_memccpy.c | grep -E '(Error|Warning)'
-$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memccpy/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+$> clang -Wextra -Wall -Werror /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memccpy/main.c -L/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir
 
-/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memccpy/main.c:33:15: error: implicit declaration of function 'ft_memccpy' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
-        if (!(dest = ft_memccpy(dest, src, c, n)))
-                     ^
-/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memccpy/main.c:33:15: note: did you mean 'ft_memcpy'?
-/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir/libft.h:22:7: note: 'ft_memcpy' declared here
-void *ft_memcpy (void *dest, const void *src, size_t n);
-      ^
-/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memccpy/main.c:33:13: error: incompatible integer to pointer conversion assigning to 'void *' from 'int' [-Werror,-Wint-conversion]
-        if (!(dest = ft_memccpy(dest, src, c, n)))
-                   ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-2 errors generated.
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memccpy/user_output_test01	2020-11-03 00:48:32.489847475 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memccpy/test01.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1,2 @@$
++jjjjjjjjjjjjjjjjjjjj$
++zyxwvutsrjjjjjjjjjjjjjjjjjjjj$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memccpy/user_output_test02	2020-11-03 00:48:32.509848190 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memccpy/test02.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1,2 @@$
++NULL$
++zyxjjjjjjjjjjjjjjjjjjjjjjjjjj$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memccpy/user_output_test03	2020-11-03 00:48:32.541849333 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memccpy/test03.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1,2 @@$
++jjj$
++zyxwvutsrqponmlkjihgfedcbajjj$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 4 ===================================================
+$> ./user_exe 04
+$> diff -U 3 user_output_test04 test04.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memccpy/user_output_test04	2020-11-03 00:48:32.557849904 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memccpy/test04.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1,2 @@$
++jjjjjjjjjjjjjjjjjjjjjjjjjj$
++zyxjjjjjjjjjjjjjjjjjjjjjjjjjj$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
 
 = ft_memchr ====================================================================
 $> norminette ft_memchr.c | grep -E '(Error|Warning)'
-$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memchr/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+$> clang -Wextra -Wall -Werror /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memchr/main.c -L/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir
 
-/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memchr/main.c:33:8: error: implicit declaration of function 'ft_memchr' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
-        str = ft_memchr(s, c, n);
-              ^
-/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memchr/main.c:33:8: note: did you mean 'ft_memcpy'?
-/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir/libft.h:22:7: note: 'ft_memcpy' declared here
-void *ft_memcpy (void *dest, const void *src, size_t n);
-      ^
-/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memchr/main.c:33:6: error: incompatible integer to pointer conversion assigning to 'const char *' from 'int' [-Werror,-Wint-conversion]
-        str = ft_memchr(s, c, n);
-            ^ ~~~~~~~~~~~~~~~~~~
-/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memchr/main.c:61:16: error: implicit declaration of function 'ft_memchr' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
-                printf("%s", ft_memchr(tab, -1, 7));
-                             ^
-/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memchr/main.c:61:16: error: format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]
-                printf("%s", ft_memchr(tab, -1, 7));
-                        ~~   ^~~~~~~~~~~~~~~~~~~~~
-                        %d
-4 errors generated.
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memchr/user_output_test01	2020-11-03 00:48:32.733856191 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memchr/test01.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1 @@$
++bonjour$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memchr/user_output_test02	2020-11-03 00:48:32.741856477 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memchr/test02.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1 @@$
++onjour$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memchr/user_output_test03	2020-11-03 00:48:32.749856763 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memchr/test03.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1 @@$
++NULL$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 4 ===================================================
+$> ./user_exe 04
+$> diff -U 3 user_output_test04 test04.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memchr/user_output_test04	2020-11-03 00:48:32.757857048 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memchr/test04.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1 @@$
++jour$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 5 ===================================================
+$> ./user_exe 05
+$> diff -U 3 user_output_test05 test05.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memchr/user_output_test05	2020-11-03 00:48:32.773857620 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memchr/test05.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1 @@$
++NULL$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 6 ===================================================
+$> ./user_exe 06
+$> diff -U 3 user_output_test06 test06.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memchr/user_output_test06	2020-11-03 00:48:32.781857905 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memchr/test06.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1 @@$
++M-^?M-^?M-^?1$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
 
 = ft_memcmp ====================================================================
 $> norminette ft_memcmp.c | grep -E '(Error|Warning)'
-$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memcmp/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+$> clang -Wextra -Wall -Werror /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memcmp/main.c -L/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir
 
-/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memcmp/main.c:36:19: error: implicit declaration of function 'ft_memcmp' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
-                ft_print_result(ft_memcmp("salut", "salut", 5));
-                                ^
-/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memcmp/main.c:36:19: note: did you mean 'ft_memcpy'?
-/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir/libft.h:22:7: note: 'ft_memcpy' declared here
-void *ft_memcpy (void *dest, const void *src, size_t n);
-      ^
-1 error generated.
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memcmp/user_output_test01	2020-11-03 00:48:32.917862763 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memcmp/test01.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1 @@$
++0$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memcmp/user_output_test02	2020-11-03 00:48:32.925863050 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memcmp/test02.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1 @@$
++1$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memcmp/user_output_test03	2020-11-03 00:48:32.941863621 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memcmp/test03.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1 @@$
++1$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 4 ===================================================
+$> ./user_exe 04
+$> diff -U 3 user_output_test04 test04.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memcmp/user_output_test04	2020-11-03 00:48:32.949863907 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memcmp/test04.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1 @@$
++1$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 5 ===================================================
+$> ./user_exe 05
+$> diff -U 3 user_output_test05 test05.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memcmp/user_output_test05	2020-11-03 00:48:32.957864192 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memcmp/test05.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1 @@$
++-1$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 6 ===================================================
+$> ./user_exe 06
+$> diff -U 3 user_output_test06 test06.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memcmp/user_output_test06	2020-11-03 00:48:32.965864478 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memcmp/test06.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1 @@$
++1$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 7 ===================================================
+$> ./user_exe 07
+$> diff -U 3 user_output_test07 test07.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memcmp/user_output_test07	2020-11-03 00:48:32.977864907 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memcmp/test07.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1 @@$
++0$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 8 ===================================================
+$> ./user_exe 08
+$> diff -U 3 user_output_test08 test08.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memcmp/user_output_test08	2020-11-03 00:48:32.985865192 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memcmp/test08.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1 @@$
++-1$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 9 ===================================================
+$> ./user_exe 09
+$> diff -U 3 user_output_test09 test09.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memcmp/user_output_test09	2020-11-03 00:48:32.993865478 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memcmp/test09.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1 @@$
++0$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
 
 = ft_memcpy ====================================================================
 $> norminette ft_memcpy.c | grep -E '(Error|Warning)'
-$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memcpy/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+$> clang -Wextra -Wall -Werror /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memcpy/main.c -L/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir
 
 = Test 1 ===================================================
 $> ./user_exe 01
 $> diff -U 3 user_output_test01 test01.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memcpy/user_output_test01	2020-11-03 00:48:33.133870477 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memcpy/test01.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1 @@$
++zyxwvutsrqponmjjjjjjjjjjjjjjjj$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
 
-Diff OK :D
+Diff KO :(
 = Test 2 ===================================================
 $> ./user_exe 02
 $> diff -U 3 user_output_test02 test02.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memcpy/user_output_test02	2020-11-03 00:48:33.141870762 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memcpy/test02.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1 @@$
++jjjjjjjjjjjjjjjjjjjjjjjjjjjjjj$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
 
-Diff OK :D
+Diff KO :(
 = Test 3 ===================================================
 $> ./user_exe 03
 $> diff -U 3 user_output_test03 test03.output
+M-PM-^TM-PM-2M-PM->M-PM-8M-QM-^GM-PM-=M-QM-^KM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-QM-^K /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memcpy/user_output_test03 M-PM-8 /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memcpy/test03.output M-QM-^@M-PM-0M-PM-7M-PM-;M-PM-8M-QM-^GM-PM-0M-QM-^NM-QM-^BM-QM-^AM-QM-^O$
 
-Diff OK :D
+Diff KO :(
 
 = ft_memmove ===================================================================
 $> norminette ft_memmove.c | grep -E '(Error|Warning)'
-$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memmove/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+$> clang -Wextra -Wall -Werror /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memmove/main.c -L/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir
 
-/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memmove/main.c:20:14: error: implicit declaration of function 'ft_memmove' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
-        if (dest != ft_memmove(dest, src, n))
-                    ^
-/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memmove/main.c:20:14: note: did you mean 'memmove'?
-/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/string.h:73:7: note: 'memmove' declared here
-void    *memmove(void *__dst, const void *__src, size_t __len);
-         ^
-/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memmove/main.c:20:11: error: comparison between pointer and integer ('void *' and 'int') [-Werror]
-        if (dest != ft_memmove(dest, src, n))
-            ~~~~ ^  ~~~~~~~~~~~~~~~~~~~~~~~~
-2 errors generated.
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memmove/user_output_test01	2020-11-03 00:48:33.289876047 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memmove/test01.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1 @@$
++conseipsum dolor sit a$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+M-PM-^TM-PM-2M-PM->M-PM-8M-QM-^GM-PM-=M-QM-^KM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-QM-^K /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memmove/user_output_test02 M-PM-8 /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memmove/test02.output M-QM-^@M-PM-0M-PM-7M-PM-;M-PM-8M-QM-^GM-PM-0M-QM-^NM-QM-^BM-QM-^AM-QM-^O$
+
+Diff KO :(
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memmove/user_output_test03	2020-11-03 00:48:33.313876904 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memmove/test03.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1 @@$
++lorem ipum dolor sit a$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 4 ===================================================
+$> ./user_exe 04
+$> diff -U 3 user_output_test04 test04.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memmove/user_output_test04	2020-11-03 00:48:33.325877332 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memmove/test04.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1 @@$
++orem ipssum dolor sit $
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 5 ===================================================
+$> ./user_exe 05
+$> diff -U 3 user_output_test05 test05.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memmove/user_output_test05	2020-11-03 00:48:33.333877618 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memmove/test05.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1 @@$
++lorem ipsum dolor sit $
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
 
 = ft_memset ====================================================================
 $> norminette ft_memset.c | grep -E '(Error|Warning)'
-$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memset/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+$> clang -Wextra -Wall -Werror /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memset/main.c -L/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir
 
 = Test 1 ===================================================
 $> ./user_exe 01
 $> diff -U 3 user_output_test01 test01.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memset/user_output_test01	2020-11-03 00:48:33.509883902 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memset/test01.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1 @@$
++cccccjjjjjjjjjj$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
 
-Diff OK :D
+Diff KO :(
 = Test 2 ===================================================
 $> ./user_exe 02
 $> diff -U 3 user_output_test02 test02.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memset/user_output_test02	2020-11-03 00:48:33.517884187 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memset/test02.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1 @@$
++ccccccccccccccj$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
 
-Diff OK :D
+Diff KO :(
 = Test 3 ===================================================
 $> ./user_exe 03
 $> diff -U 3 user_output_test03 test03.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memset/user_output_test03	2020-11-03 00:48:33.529884616 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memset/test03.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1,7 @@$
++$
++$
++$
++$
++$
++$
++jjjjjjjjj$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
 
-Diff OK :D
+Diff KO :(
 = Test 4 ===================================================
 $> ./user_exe 04
 $> diff -U 3 user_output_test04 test04.output
+M-PM-^TM-PM-2M-PM->M-PM-8M-QM-^GM-PM-=M-QM-^KM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-QM-^K /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memset/user_output_test04 M-PM-8 /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_memset/test04.output M-QM-^@M-PM-0M-PM-7M-PM-;M-PM-8M-QM-^GM-PM-0M-QM-^NM-QM-^BM-QM-^AM-QM-^O$
 
-Diff OK :D
+Diff KO :(
 
 = ft_strchr ====================================================================
 $> norminette ft_strchr.c | grep -E '(Error|Warning)'
-$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strchr/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
-
-/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strchr/main.c:32:14: error: implicit declaration of function 'ft_strchr' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
-        if (!(str = ft_strchr(s, c)))
-                    ^
-/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strchr/main.c:32:12: error: incompatible integer to pointer conversion assigning to 'char *' from 'int' [-Werror,-Wint-conversion]
-        if (!(str = ft_strchr(s, c)))
-                  ^ ~~~~~~~~~~~~~~~
-2 errors generated.
-
-= ft_strdup ====================================================================
-$> norminette ft_strdup.c | grep -E '(Error|Warning)'
-Error (line 21): Empty line
-Norme check failed
-$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strdup/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
-
-/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strdup/main.c:38:19: error: implicit declaration of function 'ft_strdup' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
-                if (!(str_dup = ft_strdup(str)))
-                                ^
-/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strdup/main.c:38:17: error: incompatible integer to pointer conversion assigning to 'char *' from 'int' [-Werror,-Wint-conversion]
-                if (!(str_dup = ft_strdup(str)))
-                              ^ ~~~~~~~~~~~~~~
-2 errors generated.
-
-= ft_strlcat ===================================================================
-$> norminette ft_strlcat.c | grep -E '(Error|Warning)'
-$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcat/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
-
-/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcat/main.c:30:18: error: implicit declaration of function 'ft_strlcat' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
-        ft_print_result(ft_strlcat(dest, src, size));
-                        ^
-1 error generated.
-
-= ft_strlcpy ===================================================================
-$> norminette ft_strlcpy.c | grep -E '(Error|Warning)'
-$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcpy/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
-
-/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcpy/main.c:31:18: error: implicit declaration of function 'ft_strlcpy' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
-        ft_print_result(ft_strlcpy(dest, src, size));
-                        ^
-1 error generated.
-
-= ft_strlen ====================================================================
-$> norminette ft_strlen.c | grep -E '(Error|Warning)'
-$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlen/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+$> clang -Wextra -Wall -Werror /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strchr/main.c -L/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir
 
 = Test 1 ===================================================
 $> ./user_exe 01
 $> diff -U 3 user_output_test01 test01.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strchr/user_output_test01	2020-11-03 00:48:33.677889900 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strchr/test01.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1 @@$
++bonjour$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
 
-Diff OK :D
+Diff KO :(
 = Test 2 ===================================================
 $> ./user_exe 02
 $> diff -U 3 user_output_test02 test02.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strchr/user_output_test02	2020-11-03 00:48:33.689890328 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strchr/test02.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1 @@$
++onjour$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
 
-Diff OK :D
+Diff KO :(
 = Test 3 ===================================================
 $> ./user_exe 03
 $> diff -U 3 user_output_test03 test03.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strchr/user_output_test03	2020-11-03 00:48:33.697890614 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strchr/test03.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1 @@$
++jour$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
 
-Diff OK :D
+Diff KO :(
 = Test 4 ===================================================
 $> ./user_exe 04
 $> diff -U 3 user_output_test04 test04.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strchr/user_output_test04	2020-11-03 00:48:33.705890900 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strchr/test04.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1 @@$
++NULL$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
 
-Diff OK :D
+Diff KO :(
 = Test 5 ===================================================
 $> ./user_exe 05
 $> diff -U 3 user_output_test05 test05.output
@@ -333,64 +1026,621 @@ $> diff -U 3 user_output_test06 test06.output
 
 Diff OK :D
 
+= ft_strdup ====================================================================
+$> norminette ft_strdup.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strdup/main.c -L/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir
+
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strdup/user_output_test01	2020-11-03 00:48:33.861896470 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strdup/test01.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1 @@$
++lorem ipsum dolor sit amet$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+
+= ft_strlcat ===================================================================
+$> norminette ft_strlcat.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcat/main.c -L/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir
+
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+M-PM-^TM-PM-2M-PM->M-PM-8M-QM-^GM-PM-=M-QM-^KM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-QM-^K /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcat/user_output_test01 M-PM-8 /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcat/test01.output M-QM-^@M-PM-0M-PM-7M-PM-;M-PM-8M-QM-^GM-PM-0M-QM-^NM-QM-^BM-QM-^AM-QM-^O$
+
+Diff KO :(
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+M-PM-^TM-PM-2M-PM->M-PM-8M-QM-^GM-PM-=M-QM-^KM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-QM-^K /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcat/user_output_test02 M-PM-8 /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcat/test02.output M-QM-^@M-PM-0M-PM-7M-PM-;M-PM-8M-QM-^GM-PM-0M-QM-^NM-QM-^BM-QM-^AM-QM-^O$
+
+Diff KO :(
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+M-PM-^TM-PM-2M-PM->M-PM-8M-QM-^GM-PM-=M-QM-^KM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-QM-^K /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcat/user_output_test03 M-PM-8 /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcat/test03.output M-QM-^@M-PM-0M-PM-7M-PM-;M-PM-8M-QM-^GM-PM-0M-QM-^NM-QM-^BM-QM-^AM-QM-^O$
+
+Diff KO :(
+= Test 4 ===================================================
+$> ./user_exe 04
+$> diff -U 3 user_output_test04 test04.output
+M-PM-^TM-PM-2M-PM->M-PM-8M-QM-^GM-PM-=M-QM-^KM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-QM-^K /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcat/user_output_test04 M-PM-8 /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcat/test04.output M-QM-^@M-PM-0M-PM-7M-PM-;M-PM-8M-QM-^GM-PM-0M-QM-^NM-QM-^BM-QM-^AM-QM-^O$
+
+Diff KO :(
+= Test 5 ===================================================
+$> ./user_exe 05
+$> diff -U 3 user_output_test05 test05.output
+M-PM-^TM-PM-2M-PM->M-PM-8M-QM-^GM-PM-=M-QM-^KM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-QM-^K /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcat/user_output_test05 M-PM-8 /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcat/test05.output M-QM-^@M-PM-0M-PM-7M-PM-;M-PM-8M-QM-^GM-PM-0M-QM-^NM-QM-^BM-QM-^AM-QM-^O$
+
+Diff KO :(
+= Test 6 ===================================================
+$> ./user_exe 06
+$> diff -U 3 user_output_test06 test06.output
+M-PM-^TM-PM-2M-PM->M-PM-8M-QM-^GM-PM-=M-QM-^KM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-QM-^K /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcat/user_output_test06 M-PM-8 /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcat/test06.output M-QM-^@M-PM-0M-PM-7M-PM-;M-PM-8M-QM-^GM-PM-0M-QM-^NM-QM-^BM-QM-^AM-QM-^O$
+
+Diff KO :(
+= Test 7 ===================================================
+$> ./user_exe 07
+$> diff -U 3 user_output_test07 test07.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcat/user_output_test07	2020-11-03 00:48:34.061903610 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcat/test07.output	2020-11-02 01:37:36.161813000 +0300$
+@@ -0,0 +1,2 @@$
++31$
++rrrrrrrrrrrrrrr$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 8 ===================================================
+$> ./user_exe 08
+$> diff -U 3 user_output_test08 test08.output
+M-PM-^TM-PM-2M-PM->M-PM-8M-QM-^GM-PM-=M-QM-^KM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-QM-^K /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcat/user_output_test08 M-PM-8 /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcat/test08.output M-QM-^@M-PM-0M-PM-7M-PM-;M-PM-8M-QM-^GM-PM-0M-QM-^NM-QM-^BM-QM-^AM-QM-^O$
+
+Diff KO :(
+= Test 9 ===================================================
+$> ./user_exe 09
+$> diff -U 3 user_output_test09 test09.output
+M-PM-^TM-PM-2M-PM->M-PM-8M-QM-^GM-PM-=M-QM-^KM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-QM-^K /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcat/user_output_test09 M-PM-8 /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcat/test09.output M-QM-^@M-PM-0M-PM-7M-PM-;M-PM-8M-QM-^GM-PM-0M-QM-^NM-QM-^BM-QM-^AM-QM-^O$
+
+Diff KO :(
+
+= ft_strlcpy ===================================================================
+$> norminette ft_strlcpy.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcpy/main.c -L/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir
+
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+M-PM-^TM-PM-2M-PM->M-PM-8M-QM-^GM-PM-=M-QM-^KM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-QM-^K /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcpy/user_output_test01 M-PM-8 /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcpy/test01.output M-QM-^@M-PM-0M-PM-7M-PM-;M-PM-8M-QM-^GM-PM-0M-QM-^NM-QM-^BM-QM-^AM-QM-^O$
+
+Diff KO :(
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+M-PM-^TM-PM-2M-PM->M-PM-8M-QM-^GM-PM-=M-QM-^KM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-QM-^K /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcpy/user_output_test02 M-PM-8 /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcpy/test02.output M-QM-^@M-PM-0M-PM-7M-PM-;M-PM-8M-QM-^GM-PM-0M-QM-^NM-QM-^BM-QM-^AM-QM-^O$
+
+Diff KO :(
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+M-PM-^TM-PM-2M-PM->M-PM-8M-QM-^GM-PM-=M-QM-^KM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-QM-^K /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcpy/user_output_test03 M-PM-8 /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcpy/test03.output M-QM-^@M-PM-0M-PM-7M-PM-;M-PM-8M-QM-^GM-PM-0M-QM-^NM-QM-^BM-QM-^AM-QM-^O$
+
+Diff KO :(
+= Test 4 ===================================================
+$> ./user_exe 04
+$> diff -U 3 user_output_test04 test04.output
+M-PM-^TM-PM-2M-PM->M-PM-8M-QM-^GM-PM-=M-QM-^KM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-QM-^K /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcpy/user_output_test04 M-PM-8 /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcpy/test04.output M-QM-^@M-PM-0M-PM-7M-PM-;M-PM-8M-QM-^GM-PM-0M-QM-^NM-QM-^BM-QM-^AM-QM-^O$
+
+Diff KO :(
+= Test 5 ===================================================
+$> ./user_exe 05
+$> diff -U 3 user_output_test05 test05.output
+M-PM-^TM-PM-2M-PM->M-PM-8M-QM-^GM-PM-=M-QM-^KM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-QM-^K /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcpy/user_output_test05 M-PM-8 /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcpy/test05.output M-QM-^@M-PM-0M-PM-7M-PM-;M-PM-8M-QM-^GM-PM-0M-QM-^NM-QM-^BM-QM-^AM-QM-^O$
+
+Diff KO :(
+
+= ft_strlen ====================================================================
+$> norminette ft_strlen.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlen/main.c -L/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir
+
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlen/user_output_test01	2020-11-03 00:48:34.429916743 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlen/test01.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++7$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlen/user_output_test02	2020-11-03 00:48:34.441917171 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlen/test02.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++1$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlen/user_output_test03	2020-11-03 00:48:34.453917599 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlen/test03.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++27$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 4 ===================================================
+$> ./user_exe 04
+$> diff -U 3 user_output_test04 test04.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlen/user_output_test04	2020-11-03 00:48:34.461917885 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlen/test04.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++0$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 5 ===================================================
+$> ./user_exe 05
+$> diff -U 3 user_output_test05 test05.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlen/user_output_test05	2020-11-03 00:48:34.473918313 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlen/test05.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++5$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 6 ===================================================
+$> ./user_exe 06
+$> diff -U 3 user_output_test06 test06.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlen/user_output_test06	2020-11-03 00:48:34.481918600 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlen/test06.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++3$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+
 = ft_strncmp ===================================================================
 $> norminette ft_strncmp.c | grep -E '(Error|Warning)'
-$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strncmp/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+$> clang -Wextra -Wall -Werror /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strncmp/main.c -L/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir
 
-/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strncmp/main.c:36:19: error: implicit declaration of function 'ft_strncmp' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
-                ft_print_result(ft_strncmp("salut", "salut", 5));
-                                ^
-/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strncmp/main.c:36:19: note: did you mean 'strncmp'?
-/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/string.h:84:6: note: 'strncmp' declared here
-int      strncmp(const char *__s1, const char *__s2, size_t __n);
-         ^
-1 error generated.
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strncmp/user_output_test01	2020-11-03 00:48:34.749928164 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strncmp/test01.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++0$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strncmp/user_output_test02	2020-11-03 00:48:34.769928878 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strncmp/test02.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++-1$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strncmp/user_output_test03	2020-11-03 00:48:34.789929591 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strncmp/test03.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++1$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 4 ===================================================
+$> ./user_exe 04
+$> diff -U 3 user_output_test04 test04.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strncmp/user_output_test04	2020-11-03 00:48:34.809930305 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strncmp/test04.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++1$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 5 ===================================================
+$> ./user_exe 05
+$> diff -U 3 user_output_test05 test05.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strncmp/user_output_test05	2020-11-03 00:48:34.833931162 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strncmp/test05.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++-1$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 6 ===================================================
+$> ./user_exe 06
+$> diff -U 3 user_output_test06 test06.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strncmp/user_output_test06	2020-11-03 00:48:34.849931732 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strncmp/test06.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++1$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 7 ===================================================
+$> ./user_exe 07
+$> diff -U 3 user_output_test07 test07.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strncmp/user_output_test07	2020-11-03 00:48:34.869932446 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strncmp/test07.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++0$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 8 ===================================================
+$> ./user_exe 08
+$> diff -U 3 user_output_test08 test08.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strncmp/user_output_test08	2020-11-03 00:48:34.889933161 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strncmp/test08.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++0$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 9 ===================================================
+$> ./user_exe 09
+$> diff -U 3 user_output_test09 test09.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strncmp/user_output_test09	2020-11-03 00:48:34.921934303 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strncmp/test09.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++0$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 10 ==================================================
+$> ./user_exe 10
+$> diff -U 3 user_output_test10 test10.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strncmp/user_output_test10	2020-11-03 00:48:34.941935016 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strncmp/test10.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++0$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 11 ==================================================
+$> ./user_exe 11
+$> diff -U 3 user_output_test11 test11.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strncmp/user_output_test11	2020-11-03 00:48:34.965935872 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strncmp/test11.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++1$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
 
 = ft_strnstr ===================================================================
 $> norminette ft_strnstr.c | grep -E '(Error|Warning)'
-$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strnstr/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+$> clang -Wextra -Wall -Werror /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strnstr/main.c -L/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir
 
-/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strnstr/main.c:31:14: error: implicit declaration of function 'ft_strnstr' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
-        if (!(str = ft_strnstr(big, little, len)))
-                    ^
-/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strnstr/main.c:31:12: error: incompatible integer to pointer conversion assigning to 'const char *' from 'int' [-Werror,-Wint-conversion]
-        if (!(str = ft_strnstr(big, little, len)))
-                  ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-2 errors generated.
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strnstr/user_output_test01	2020-11-03 00:48:35.273946861 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strnstr/test01.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++lorem ipsum dolor sit amet$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strnstr/user_output_test02	2020-11-03 00:48:35.301947859 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strnstr/test02.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++ipsum dolor sit amet$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strnstr/user_output_test03	2020-11-03 00:48:35.325948715 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strnstr/test03.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++ipsum dolor sit lorem ipsum dolor$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 4 ===================================================
+$> ./user_exe 04
+$> diff -U 3 user_output_test04 test04.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strnstr/user_output_test04	2020-11-03 00:48:35.353949715 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strnstr/test04.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++lorem ipsum dolor sit amet$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 5 ===================================================
+$> ./user_exe 05
+$> diff -U 3 user_output_test05 test05.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strnstr/user_output_test05	2020-11-03 00:48:35.373950428 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strnstr/test05.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++NULL$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 6 ===================================================
+$> ./user_exe 06
+$> diff -U 3 user_output_test06 test06.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strnstr/user_output_test06	2020-11-03 00:48:35.393951141 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strnstr/test06.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++dolor sit amet$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 7 ===================================================
+$> ./user_exe 07
+$> diff -U 3 user_output_test07 test07.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strnstr/user_output_test07	2020-11-03 00:48:35.425952283 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strnstr/test07.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++NULL$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 8 ===================================================
+$> ./user_exe 08
+$> diff -U 3 user_output_test08 test08.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strnstr/user_output_test08	2020-11-03 00:48:35.445952997 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strnstr/test08.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++NULL$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 9 ===================================================
+$> ./user_exe 09
+$> diff -U 3 user_output_test09 test09.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strnstr/user_output_test09	2020-11-03 00:48:35.461953567 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strnstr/test09.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++NULL$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 10 ==================================================
+$> ./user_exe 10
+$> diff -U 3 user_output_test10 test10.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strnstr/user_output_test10	2020-11-03 00:48:35.485954423 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strnstr/test10.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++NULL$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
 
 = ft_strrchr ===================================================================
 $> norminette ft_strrchr.c | grep -E '(Error|Warning)'
-$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strrchr/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+$> clang -Wextra -Wall -Werror /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strrchr/main.c -L/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir
 
-/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strrchr/main.c:32:14: error: implicit declaration of function 'ft_strrchr' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
-        if (!(str = ft_strrchr(s, c)))
-                    ^
-/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strrchr/main.c:32:14: note: did you mean 'strrchr'?
-/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/string.h:87:7: note: 'strrchr' declared here
-char    *strrchr(const char *__s, int __c);
-         ^
-/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strrchr/main.c:32:12: error: incompatible integer to pointer conversion assigning to 'char *' from 'int' [-Werror,-Wint-conversion]
-        if (!(str = ft_strrchr(s, c)))
-                  ^ ~~~~~~~~~~~~~~~~
-2 errors generated.
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strrchr/user_output_test01	2020-11-03 00:48:35.813966125 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strrchr/test01.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++bonjour$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strrchr/user_output_test02	2020-11-03 00:48:35.837966981 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strrchr/test02.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++our$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strrchr/user_output_test03	2020-11-03 00:48:35.853967551 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strrchr/test03.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++o$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 4 ===================================================
+$> ./user_exe 04
+$> diff -U 3 user_output_test04 test04.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strrchr/user_output_test04	2020-11-03 00:48:35.881968551 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strrchr/test04.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++jour$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 5 ===================================================
+$> ./user_exe 05
+$> diff -U 3 user_output_test05 test05.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strrchr/user_output_test05	2020-11-03 00:48:35.897969121 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strrchr/test05.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++NULL$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 6 ===================================================
+$> ./user_exe 06
+$> diff -U 3 user_output_test06 test06.output
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./user_exe 07
+$> diff -U 3 user_output_test07 test07.output
+
+Diff OK :D
+= Test 8 ===================================================
+$> ./user_exe 08
+$> diff -U 3 user_output_test08 test08.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strrchr/user_output_test08	2020-11-03 00:48:35.949970975 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strrchr/test08.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++NULL$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
 
 = ft_tolower ===================================================================
 $> norminette ft_tolower.c | grep -E '(Error|Warning)'
-$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_tolower/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+$> clang -Wextra -Wall -Werror /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_tolower/main.c -L/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir
 
-/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_tolower/main.c:24:7: error: implicit declaration of function 'ft_tolower' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
-                c = ft_tolower(start);
-                    ^
-1 error generated.
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+M-PM-^TM-PM-2M-PM->M-PM-8M-QM-^GM-PM-=M-QM-^KM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-QM-^K /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_tolower/user_output_test01 M-PM-8 /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_tolower/test01.output M-QM-^@M-PM-0M-PM-7M-PM-;M-PM-8M-QM-^GM-PM-0M-QM-^NM-QM-^BM-QM-^AM-QM-^O$
+
+Diff KO :(
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_tolower/user_output_test02	2020-11-03 00:48:36.329984527 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_tolower/test02.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++0123456789$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_tolower/user_output_test03	2020-11-03 00:48:36.353985383 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_tolower/test03.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++:;<=>?@$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 4 ===================================================
+$> ./user_exe 04
+$> diff -U 3 user_output_test04 test04.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_tolower/user_output_test04	2020-11-03 00:48:36.373986096 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_tolower/test04.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++abcdefghijklmnopqrstuvwxyz$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 5 ===================================================
+$> ./user_exe 05
+$> diff -U 3 user_output_test05 test05.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_tolower/user_output_test05	2020-11-03 00:48:36.401987094 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_tolower/test05.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++[\]^_`$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 6 ===================================================
+$> ./user_exe 06
+$> diff -U 3 user_output_test06 test06.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_tolower/user_output_test06	2020-11-03 00:48:36.421987808 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_tolower/test06.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++abcdefghijklmnopqrstuvwxyz$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 7 ===================================================
+$> ./user_exe 07
+$> diff -U 3 user_output_test07 test07.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_tolower/user_output_test07	2020-11-03 00:48:36.453988949 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_tolower/test07.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++{|}~^?$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
 
 = ft_toupper ===================================================================
 $> norminette ft_toupper.c | grep -E '(Error|Warning)'
-$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_toupper/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+$> clang -Wextra -Wall -Werror /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_toupper/main.c -L/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/home/gudimz/Desktop/agigi/School21/libftest/tmp_tests_dir
 
-/Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_toupper/main.c:23:7: error: implicit declaration of function 'ft_toupper' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
-                c = ft_toupper(start);
-                    ^
-1 error generated.
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+M-PM-^TM-PM-2M-PM->M-PM-8M-QM-^GM-PM-=M-QM-^KM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-QM-^K /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_toupper/user_output_test01 M-PM-8 /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_toupper/test01.output M-QM-^@M-PM-0M-PM-7M-PM-;M-PM-8M-QM-^GM-PM-0M-QM-^NM-QM-^BM-QM-^AM-QM-^O$
+
+Diff KO :(
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_toupper/user_output_test02	2020-11-03 00:48:36.842002784 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_toupper/test02.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++0123456789$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_toupper/user_output_test03	2020-11-03 00:48:36.866003639 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_toupper/test03.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++:;<=>?@$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 4 ===================================================
+$> ./user_exe 04
+$> diff -U 3 user_output_test04 test04.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_toupper/user_output_test04	2020-11-03 00:48:36.890004496 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_toupper/test04.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++ABCDEFGHIJKLMNOPQRSTUVWXYZ$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 5 ===================================================
+$> ./user_exe 05
+$> diff -U 3 user_output_test05 test05.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_toupper/user_output_test05	2020-11-03 00:48:36.910005209 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_toupper/test05.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++[\]^_`$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 6 ===================================================
+$> ./user_exe 06
+$> diff -U 3 user_output_test06 test06.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_toupper/user_output_test06	2020-11-03 00:48:36.930005922 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_toupper/test06.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++ABCDEFGHIJKLMNOPQRSTUVWXYZ$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
+= Test 7 ===================================================
+$> ./user_exe 07
+$> diff -U 3 user_output_test07 test07.output
+--- /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_toupper/user_output_test07	2020-11-03 00:48:36.954006777 +0300$
++++ /home/gudimz/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_toupper/test07.output	2020-11-02 01:37:36.165813000 +0300$
+@@ -0,0 +1 @@$
++{|}~^?$
+\ M-PM-^R M-PM-:M-PM->M-PM-=M-QM-^FM-PM-5 M-QM-^DM-PM-0M-PM-9M-PM-;M-PM-0 M-PM-=M-PM-5M-QM-^B M-PM-=M-PM->M-PM-2M-PM->M-PM-9 M-QM-^AM-QM-^BM-QM-^@M-PM->M-PM-:M-PM-8$
+
+Diff KO :(
 
 = Part2_functions ==============================================================
 

@@ -6,7 +6,7 @@
 #    By: agigi <agigi@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/29 19:22:08 by agigi             #+#    #+#              #
-#    Updated: 2020/11/01 19:18:19 by agigi            ###   ########.fr        #
+#    Updated: 2020/11/02 23:05:23 by agigi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,10 @@ all: $(NAME)
 $(NAME):
 		gcc $(FLAGS) -c $(SRCS)
 		ar rc $(NAME) $(OBJS)
+so: 
+		gcc $(FLAGS) -c $(SRCS)
+		gcc -shared -o $(NAME:.a=.so) $(OBJS)
+
 clean:
 		rm -f $(OBJS)
 fclean: clean

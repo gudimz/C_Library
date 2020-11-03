@@ -6,7 +6,7 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 21:14:11 by agigi             #+#    #+#             */
-/*   Updated: 2020/11/03 00:27:04 by agigi            ###   ########.fr       */
+/*   Updated: 2020/11/03 21:39:56 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	unsigned char		*dst;
-	const unsigned char *str;
+	unsigned char		*str;
 
-	dst = dest;
-	str = src;
+	dst = (unsigned char *)dest;
+	str = (unsigned char *)src;
 	if ((dest == src) || (n == 0))
 		return (dest);
 	while (n--)

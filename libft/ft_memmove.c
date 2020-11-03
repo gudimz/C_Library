@@ -6,7 +6,7 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 15:55:47 by agigi             #+#    #+#             */
-/*   Updated: 2020/11/03 00:27:54 by agigi            ###   ########.fr       */
+/*   Updated: 2020/11/03 21:41:05 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char		*dst;
-	const unsigned char *str;
+	unsigned char		*str;
 
-	dst = dest;
-	str = src;
+	dst = (unsigned char *)dest;
+	str = (unsigned char *)src;
 	if (dst > str)
 	{
 		while (n--)

@@ -6,7 +6,7 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 18:51:39 by agigi             #+#    #+#             */
-/*   Updated: 2020/10/31 17:33:17 by agigi            ###   ########.fr       */
+/*   Updated: 2020/11/03 21:42:59 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 int	ft_memcmp(const void *arr1, const void *arr2, size_t n)
 {
 	size_t				i;
-	const unsigned char *str1;
-	const unsigned char *str2;
+	unsigned char *str1;
+	unsigned char *str2;
 
 	i = 0;
-	str1 = arr1;
-	str2 = arr2;
+	str1 = (unsigned char *)arr1;
+	str2 = (unsigned char *)arr2;
 	while (i < n)
 	{
 		if (str1[i] != str2[i])

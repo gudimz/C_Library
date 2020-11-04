@@ -6,18 +6,18 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 23:35:45 by agigi             #+#    #+#             */
-/*   Updated: 2020/11/04 00:00:21 by agigi            ###   ########.fr       */
+/*   Updated: 2020/11/04 15:25:54 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strjoin (char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char *str;
-	size_t i;
-	size_t j;
-	
+	char	*str;
+	size_t	i;
+	size_t	j;
+
 	if (!s1 || !s2)
 		return (NULL);
 	i = ft_strlen(s1 + ft_strlen(s2));
@@ -36,6 +36,6 @@ char *ft_strjoin (char const *s1, char const *s2)
 		i++;
 		j++;
 	}
-		str[i] = '\0';
+	str[i] = '\0';
 	return (str);
 }

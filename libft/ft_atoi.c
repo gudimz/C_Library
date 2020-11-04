@@ -6,7 +6,7 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 15:38:20 by agigi             #+#    #+#             */
-/*   Updated: 2020/11/03 00:41:24 by agigi            ###   ########.fr       */
+/*   Updated: 2020/11/04 15:26:20 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int	ft_atoi(const char *str)
 {
-	size_t i;
-	long long res;
-	long long res_check;
-	int sign;
+	size_t		i;
+	long long	res;
+	long long	res_check;
+	int			sign;
 
 	i = 0;
 	res = 0;

@@ -6,17 +6,17 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 21:33:50 by agigi             #+#    #+#             */
-/*   Updated: 2020/11/03 23:33:16 by agigi            ###   ########.fr       */
+/*   Updated: 2020/11/04 15:29:00 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char *sub;
-	char *str;
-	size_t i;
+	char	*sub;
+	char	*str;
+	size_t	i;
 
 	if (!s)
 		return (NULL);
@@ -32,6 +32,5 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 		i++;
 		start++;
 	}
-		sub[i] = '\0';
-	return (sub);
+	sub[i] = '\0';
 }

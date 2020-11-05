@@ -6,7 +6,7 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 19:58:30 by agigi             #+#    #+#             */
-/*   Updated: 2020/11/06 00:37:29 by agigi            ###   ########.fr       */
+/*   Updated: 2020/11/06 01:08:48 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@ static int ft_lenstr(long num)
 	int i;
 	
 	i = 0;
+	if (num == 0)
+	{
+		i++;
+		return (i);
+	}
 	if (num < 9)
 		num *= -1;
 	while (num > 0)
@@ -37,7 +42,7 @@ static char *ft_nbr_itoa(int num)
 	size = ft_lenstr(nb);
 	if (!(str = (char *)malloc(sizeof(char) * (size + 1))))
 		return (NULL);
-	str[size + 1] = '\0';
+	str[size] = '\0';
 	if (nb < 0)
 		nb *= -1;
 	while (size--)

@@ -6,7 +6,7 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/07 01:23:32 by agigi             #+#    #+#             */
-/*   Updated: 2020/11/08 02:38:27 by agigi            ###   ########.fr       */
+/*   Updated: 2020/11/08 02:46:22 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,8 @@ char **ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	count = ft_strcount(s, c);
-	arr = (char**)ft_calloc(count + 1, sizeof(char*));
+	if (!(arr = (char**)ft_calloc(count + 1, sizeof(char*))))
+		return (NULL);
 	start = 0;
 	while (s[start] == c)
 		start++;

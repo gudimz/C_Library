@@ -6,7 +6,7 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/07 00:40:00 by agigi             #+#    #+#             */
-/*   Updated: 2020/11/07 01:21:53 by agigi            ###   ########.fr       */
+/*   Updated: 2020/11/07 19:38:02 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ void ft_putnbr_fd(int n, int fd)
 	{
 		ft_putchar_fd(nb + '0', fd);
 	}
-	if (nb > 9)
+	else if (nb > 9)
 	{
 		ft_putnbr_fd(nb / 10, fd);
-		ft_putnbr_fd(nb % 10, fd);
+		ft_putchar_fd(nb % 10 + '0', fd);
 	}
 }

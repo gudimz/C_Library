@@ -6,7 +6,7 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/08 16:21:45 by agigi             #+#    #+#             */
-/*   Updated: 2020/11/08 17:15:16 by agigi            ###   ########.fr       */
+/*   Updated: 2020/11/09 02:11:01 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (!*lst)
 	{
-		new->next = NULL;
+		*lst = new;
+		return ;
 	}
 	if (!new || !lst)
 		return ;

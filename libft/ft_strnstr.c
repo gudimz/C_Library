@@ -6,7 +6,7 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 18:14:23 by agigi             #+#    #+#             */
-/*   Updated: 2020/11/01 19:36:39 by agigi            ###   ########.fr       */
+/*   Updated: 2020/11/09 01:58:11 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	while (i < len)
 	{
 		j = 0;
-		while (big[i] == little[j] && big[i])
+		while (big[i + j] == little[j] && big[i + j] && i + j < len)
 		{
 			if (little[j + 1] == '\0')
 				return ((char *)big + i);

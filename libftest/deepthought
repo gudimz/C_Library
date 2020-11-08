@@ -3,7 +3,7 @@ $> hostname; uname -msr
 vo-e3.msk.21-school.ru
 Darwin 18.7.0 x86_64
 $> date
-воскресенье,  8 ноября 2020 г. 16:14:43 (MSK)
+воскресенье,  8 ноября 2020 г. 17:06:12 (MSK)
 $> gcc --version
 Apple clang version 11.0.0 (clang-1100.0.33.17)
 Target: x86_64-apple-darwin18.7.0
@@ -31,7 +31,7 @@ Norme check failed
 
 = Compiling libft ==============================================================
 $> make re
-rm -f ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memccpy.o ft_memmove.o ft_memchr.o ft_memcmp.o ft_strlcpy.o ft_strlcat.o ft_strchr.o ft_strrchr.o ft_strnstr.o ft_strncmp.o ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o ft_toupper.o ft_tolower.o ft_atoi.o ft_calloc.o ft_strdup.o ft_substr.o ft_strjoin.o ft_strtrim.o ft_split.o ft_strmapi.o ft_itoa.o ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_lstnew.o
+rm -f ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memccpy.o ft_memmove.o ft_memchr.o ft_memcmp.o ft_strlcpy.o ft_strlcat.o ft_strchr.o ft_strrchr.o ft_strnstr.o ft_strncmp.o ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o ft_toupper.o ft_tolower.o ft_atoi.o ft_calloc.o ft_strdup.o ft_substr.o ft_strjoin.o ft_strtrim.o ft_split.o ft_strmapi.o ft_itoa.o ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_lstnew.o ft_lstadd_front.o ft_lstsize.o
 rm -f libft.a
 gcc -Wall -Wextra -Werror   -c -o ft_strlen.o ft_strlen.c
 gcc -Wall -Wextra -Werror   -c -o ft_memset.o ft_memset.c
@@ -68,11 +68,13 @@ gcc -Wall -Wextra -Werror   -c -o ft_putstr_fd.o ft_putstr_fd.c
 gcc -Wall -Wextra -Werror   -c -o ft_putendl_fd.o ft_putendl_fd.c
 gcc -Wall -Wextra -Werror   -c -o ft_putnbr_fd.o ft_putnbr_fd.c
 gcc -Wall -Wextra -Werror   -c -o ft_lstnew.o ft_lstnew.c
-ar rc libft.a ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memccpy.o ft_memmove.o ft_memchr.o ft_memcmp.o ft_strlcpy.o ft_strlcat.o ft_strchr.o ft_strrchr.o ft_strnstr.o ft_strncmp.o ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o ft_toupper.o ft_tolower.o ft_atoi.o ft_calloc.o ft_strdup.o ft_substr.o ft_strjoin.o ft_strtrim.o ft_split.o ft_strmapi.o ft_itoa.o ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_lstnew.o
+gcc -Wall -Wextra -Werror   -c -o ft_lstadd_front.o ft_lstadd_front.c
+gcc -Wall -Wextra -Werror   -c -o ft_lstsize.o ft_lstsize.c
+ar rc libft.a ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memccpy.o ft_memmove.o ft_memchr.o ft_memcmp.o ft_strlcpy.o ft_strlcat.o ft_strchr.o ft_strrchr.o ft_strnstr.o ft_strncmp.o ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o ft_toupper.o ft_tolower.o ft_atoi.o ft_calloc.o ft_strdup.o ft_substr.o ft_strjoin.o ft_strtrim.o ft_split.o ft_strmapi.o ft_itoa.o ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_lstnew.o ft_lstadd_front.o ft_lstsize.o
 ranlib libft.a
 
 $> ls -la libft.a
--rw-r--r--  1 agigi  student  32896  8 ноя 16:14 /Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir/libft.a
+-rw-r--r--  1 agigi  student  34520  8 ноя 17:06 /Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir/libft.a
 
 = Part1_functions ==============================================================
 
@@ -816,7 +818,7 @@ $> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/test
 = Test 1 ===================================================
 $> ./user_exe 01
 $> diff -U 3 user_output_test01 test01.output
---- /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strnstr/user_output_test01	2020-11-08 16:15:14.000000000 +0300$
+--- /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strnstr/user_output_test01	2020-11-08 17:06:44.000000000 +0300$
 +++ /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strnstr/test01.output	2020-11-04 15:23:10.000000000 +0300$
 @@ -1 +1 @@$
 -NULL$
@@ -828,7 +830,7 @@ Diff KO :(
 = Test 2 ===================================================
 $> ./user_exe 02
 $> diff -U 3 user_output_test02 test02.output
---- /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strnstr/user_output_test02	2020-11-08 16:15:14.000000000 +0300$
+--- /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strnstr/user_output_test02	2020-11-08 17:06:44.000000000 +0300$
 +++ /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strnstr/test02.output	2020-11-04 15:23:10.000000000 +0300$
 @@ -1 +1 @@$
 -NULL$
@@ -840,7 +842,7 @@ Diff KO :(
 = Test 3 ===================================================
 $> ./user_exe 03
 $> diff -U 3 user_output_test03 test03.output
---- /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strnstr/user_output_test03	2020-11-08 16:15:14.000000000 +0300$
+--- /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strnstr/user_output_test03	2020-11-08 17:06:44.000000000 +0300$
 +++ /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strnstr/test03.output	2020-11-04 15:23:10.000000000 +0300$
 @@ -1 +1 @@$
 -NULL$
@@ -862,7 +864,7 @@ Diff OK :D
 = Test 6 ===================================================
 $> ./user_exe 06
 $> diff -U 3 user_output_test06 test06.output
---- /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strnstr/user_output_test06	2020-11-08 16:15:14.000000000 +0300$
+--- /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strnstr/user_output_test06	2020-11-08 17:06:44.000000000 +0300$
 +++ /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strnstr/test06.output	2020-11-04 15:23:10.000000000 +0300$
 @@ -1 +1 @@$
 -NULL$
@@ -1340,7 +1342,13 @@ Diff OK :D
 Nothing turned in
 
 = ft_lstadd_front ==============================================================
-Nothing turned in
+$> norminette ft_lstadd_front.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Bonus_functions/ft_lstadd_front/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Bonus_functions/ft_lstadd_front/main.c:123:3: error: implicit declaration of function 'ft_lstadd_front' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+                ft_lstadd_front(&begin, elem4);
+                ^
+1 error generated.
 
 = ft_lstclear ==================================================================
 Nothing turned in
@@ -1370,4 +1378,10 @@ $> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/test
 2 errors generated.
 
 = ft_lstsize ===================================================================
-Nothing turned in
+$> norminette ft_lstsize.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Bonus_functions/ft_lstsize/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
+
+/Users/agigi/Desktop/agigi/School21/libftest/tests/Bonus_functions/ft_lstsize/main.c:128:19: error: implicit declaration of function 'ft_lstsize' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+                ft_print_result(ft_lstsize(elem));
+                                ^
+1 error generated.

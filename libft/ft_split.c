@@ -6,54 +6,57 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/07 01:23:32 by agigi             #+#    #+#             */
-/*   Updated: 2020/11/08 02:46:22 by agigi            ###   ########.fr       */
+/*   Updated: 2020/11/08 16:09:51 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t ft_strcount(const char *str, char c)
+static	size_t	ft_strcount(const char *str, char c)
 {
-	size_t count;
-	size_t i;
-	
+	size_t	count;
+	size_t	i;
+
 	count = 0;
 	i = 0;
 	while (i < ft_strlen(str))
 	{
-		if (str[i] != c && ((str[i + 1] == c) || str[i + 1] =='\0'))
+		if (str[i] != c && ((str[i + 1] == c) || str[i + 1] == '\0'))
 			count++;
 		i++;
-	}	
+	}
 	return (count);
 }
-static int ft_strlen_spl(const char *str, char c)
+
+static	int		ft_strlen_spl(const char *str, char c)
 {
-	int len;
+	int	len;
 
 	len = 0;
 	while (str[len] && str[len] != c)
 		len++;
 	return (len);
 }
-static char **ft_memclear(char **array)
+
+static	char	**ft_memclear(char **array)
 {
-	int i;
+	int	i;
 
 	while (array[i])
 	{
 		free(array[i]);
 		i++;
 	}
-	free (array);
+	free(array);
 	return (NULL);
 }
-char **ft_split(char const *s, char c)
+
+char			**ft_split(char const *s, char c)
 {
-	int count;
-	int start;
-	int i;
-	char **arr;
+	int		count;
+	int		start;
+	int		i;
+	char	**arr;
 
 	if (!s)
 		return (NULL);

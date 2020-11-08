@@ -6,16 +6,16 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/07 00:40:00 by agigi             #+#    #+#             */
-/*   Updated: 2020/11/07 19:38:02 by agigi            ###   ########.fr       */
+/*   Updated: 2020/11/08 16:00:55 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	long nb;
-	
+
 	nb = n;
 	if (nb < 0)
 	{

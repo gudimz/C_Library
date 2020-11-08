@@ -6,13 +6,13 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 23:47:27 by agigi             #+#    #+#             */
-/*   Updated: 2020/11/06 23:54:59 by agigi            ###   ########.fr       */
+/*   Updated: 2020/11/08 16:00:30 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }

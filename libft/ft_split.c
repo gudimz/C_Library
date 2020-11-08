@@ -6,7 +6,7 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/07 01:23:32 by agigi             #+#    #+#             */
-/*   Updated: 2020/11/08 16:09:51 by agigi            ###   ########.fr       */
+/*   Updated: 2020/11/08 16:13:39 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ static	char	**ft_memclear(char **array)
 {
 	int	i;
 
+	i = 0;
 	while (array[i])
 	{
 		free(array[i]);

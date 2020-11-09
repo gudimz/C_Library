@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/08 20:28:31 by agigi             #+#    #+#             */
-/*   Updated: 2020/11/09 22:51:19 by agigi            ###   ########.fr       */
+/*   Created: 2020/11/09 23:23:16 by agigi             #+#    #+#             */
+/*   Updated: 2020/11/09 23:38:53 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*old_elem;
+	t_list *copy_list;
+	t_list *cp_list;
 
-	while(*lst)
+	copy_list = NULL;
+	while (lst && f)
 	{
-		if ((*lst)->content)
-			del((*lst)->content);
-		old_elem = *lst;
-		*lst = old_elem->next;
-		free(old_elem);
+		if (!(cp_list = ft_lstnew(f(lst->content))))
+		{
+			ft_lstclear(&copy_list, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&copy_list, cp_list);
+		lst = lst->next;
 	}
-	lst = NULL;
+	return (copy_list);
 }

@@ -6,7 +6,7 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/07 01:23:32 by agigi             #+#    #+#             */
-/*   Updated: 2020/11/09 01:48:49 by agigi            ###   ########.fr       */
+/*   Updated: 2020/11/10 17:20:31 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static	size_t	ft_strcount(const char *str, char c)
 {
 	size_t	count;
 	size_t	i;
-	size_t len;
+	size_t	len;
 
 	count = 0;
 	i = 0;

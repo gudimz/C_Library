@@ -6,7 +6,7 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/08 20:28:31 by agigi             #+#    #+#             */
-/*   Updated: 2020/11/09 22:51:19 by agigi            ###   ########.fr       */
+/*   Updated: 2020/11/10 17:20:57 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list	*old_elem;
 
-	while(*lst)
+	while (*lst)
 	{
 		if ((*lst)->content)
 			del((*lst)->content);

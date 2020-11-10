@@ -6,16 +6,16 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/09 23:23:16 by agigi             #+#    #+#             */
-/*   Updated: 2020/11/09 23:38:53 by agigi            ###   ########.fr       */
+/*   Updated: 2020/11/10 17:21:32 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list *copy_list;
-	t_list *cp_list;
+	t_list	*copy_list;
+	t_list	*cp_list;
 
 	copy_list = NULL;
 	while (lst && f)

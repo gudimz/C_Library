@@ -6,7 +6,7 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/07 01:23:32 by agigi             #+#    #+#             */
-/*   Updated: 2020/11/10 17:20:31 by agigi            ###   ########.fr       */
+/*   Updated: 2020/11/10 23:10:13 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,6 @@ char			**ft_split(char const *s, char c)
 		start += ft_strlen_spl(&s[start], c);
 		i++;
 	}
+	arr[i] = NULL;
 	return (arr);
 }

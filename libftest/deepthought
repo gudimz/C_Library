@@ -1,9 +1,9 @@
 = Host-specific information ====================================================
 $> hostname; uname -msr
-ga-l1.msk.21-school.ru
+vo-i3.msk.21-school.ru
 Darwin 18.7.0 x86_64
 $> date
-вторник, 10 ноября 2020 г. 17:18:32 (MSK)
+вторник, 10 ноября 2020 г. 23:30:25 (MSK)
 $> gcc --version
 Apple clang version 11.0.0 (clang-1100.0.33.17)
 Target: x86_64-apple-darwin18.7.0
@@ -17,29 +17,10 @@ InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault
 
 = libft.h=======================================================================
 $> norminette libft.h | grep -E '(Error|Warning)'
-Error: global scope bad aligned
-Error: file must end with a single empty line
-Error (line 14): wrong number of spaces in preprocessor indentation
-Error (line 16): wrong number of spaces in preprocessor indentation
-Error (line 17): wrong number of spaces in preprocessor indentation
-Error (line 19): s_list and t_list not aligned.
-Error (line 52): parameter 2 of ft_split is unnamed
-Error (line 52, col 36): space before )
-Error (line 70): multiple empty lines
-Error (line 71): multiple empty lines
-Error (line 72): multiple empty lines
-Error (line 73): multiple empty lines
-Error (line 74): multiple empty lines
-Error (line 75): multiple empty lines
-Error (line 76): multiple empty lines
-Error (line 77): multiple empty lines
-Error (line 78): multiple empty lines
-Error (line 79): multiple empty lines
-Norme check failed
 
 = Compiling libft ==============================================================
 $> make re
-rm -f ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memccpy.o ft_memmove.o ft_memchr.o ft_memcmp.o ft_strlcpy.o ft_strlcat.o ft_strchr.o ft_strrchr.o ft_strnstr.o ft_strncmp.o ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o ft_toupper.o ft_tolower.o ft_atoi.o ft_calloc.o ft_strdup.o ft_substr.o ft_strjoin.o ft_strtrim.o ft_split.o ft_strmapi.o ft_itoa.o ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o ft_lstadd_back.o ft_lstiter.o ft_lstmap.o ft_lstdelone.o ft_lstnew.o ft_lstclear.o
+rm -f ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memccpy.o ft_memmove.o ft_memchr.o ft_memcmp.o ft_strlcpy.o ft_strlcat.o ft_strchr.o ft_strrchr.o ft_strnstr.o ft_strncmp.o ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o ft_toupper.o ft_tolower.o ft_atoi.o ft_calloc.o ft_strdup.o ft_substr.o ft_strjoin.o ft_strtrim.o ft_split.o ft_strmapi.o ft_itoa.o ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o ft_lstadd_back.o ft_lstclear.o ft_lstiter.o ft_lstmap.o ft_lstdelone.o
 rm -f libft.a
 gcc -Wall -Wextra -Werror   -c -o ft_strlen.o ft_strlen.c
 gcc -Wall -Wextra -Werror   -c -o ft_memset.o ft_memset.c
@@ -75,20 +56,22 @@ gcc -Wall -Wextra -Werror   -c -o ft_putchar_fd.o ft_putchar_fd.c
 gcc -Wall -Wextra -Werror   -c -o ft_putstr_fd.o ft_putstr_fd.c
 gcc -Wall -Wextra -Werror   -c -o ft_putendl_fd.o ft_putendl_fd.c
 gcc -Wall -Wextra -Werror   -c -o ft_putnbr_fd.o ft_putnbr_fd.c
+ar rc libft.a ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memccpy.o ft_memmove.o ft_memchr.o ft_memcmp.o ft_strlcpy.o ft_strlcat.o ft_strchr.o ft_strrchr.o ft_strnstr.o ft_strncmp.o ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o ft_toupper.o ft_tolower.o ft_atoi.o ft_calloc.o ft_strdup.o ft_substr.o ft_strjoin.o ft_strtrim.o ft_split.o ft_strmapi.o ft_itoa.o ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o
+ranlib libft.a
+gcc -Wall -Wextra -Werror   -c -o ft_lstnew.o ft_lstnew.c
 gcc -Wall -Wextra -Werror   -c -o ft_lstadd_front.o ft_lstadd_front.c
 gcc -Wall -Wextra -Werror   -c -o ft_lstsize.o ft_lstsize.c
 gcc -Wall -Wextra -Werror   -c -o ft_lstlast.o ft_lstlast.c
 gcc -Wall -Wextra -Werror   -c -o ft_lstadd_back.o ft_lstadd_back.c
+gcc -Wall -Wextra -Werror   -c -o ft_lstclear.o ft_lstclear.c
 gcc -Wall -Wextra -Werror   -c -o ft_lstiter.o ft_lstiter.c
 gcc -Wall -Wextra -Werror   -c -o ft_lstmap.o ft_lstmap.c
 gcc -Wall -Wextra -Werror   -c -o ft_lstdelone.o ft_lstdelone.c
-gcc -Wall -Wextra -Werror   -c -o ft_lstnew.o ft_lstnew.c
-gcc -Wall -Wextra -Werror   -c -o ft_lstclear.o ft_lstclear.c
-ar rc libft.a ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memccpy.o ft_memmove.o ft_memchr.o ft_memcmp.o ft_strlcpy.o ft_strlcat.o ft_strchr.o ft_strrchr.o ft_strnstr.o ft_strncmp.o ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o ft_toupper.o ft_tolower.o ft_atoi.o ft_calloc.o ft_strdup.o ft_substr.o ft_strjoin.o ft_strtrim.o ft_split.o ft_strmapi.o ft_itoa.o ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o ft_lstadd_back.o ft_lstiter.o ft_lstmap.o ft_lstdelone.o ft_lstnew.o ft_lstclear.o
+ar rc libft.a ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o ft_lstadd_back.o ft_lstclear.o ft_lstiter.o ft_lstmap.o ft_lstdelone.o
 ranlib libft.a
 
 $> ls -la libft.a
--rw-r--r--  1 agigi  student  39664 10 ноя 17:18 /Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir/libft.a
+-rw-r--r--  1 agigi  student  39328 10 ноя 23:30 /Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir/libft.a
 
 = Part1_functions ==============================================================
 
@@ -654,21 +637,18 @@ $> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/test
 = Test 1 ===================================================
 $> ./user_exe 01
 $> diff -U 3 user_output_test01 test01.output
-Binary files /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcat/user_output_test01 and /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcat/test01.output differ$
 
-Diff KO :(
+Diff OK :D
 = Test 2 ===================================================
 $> ./user_exe 02
 $> diff -U 3 user_output_test02 test02.output
-Binary files /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcat/user_output_test02 and /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcat/test02.output differ$
 
-Diff KO :(
+Diff OK :D
 = Test 3 ===================================================
 $> ./user_exe 03
 $> diff -U 3 user_output_test03 test03.output
-Binary files /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcat/user_output_test03 and /Users/agigi/Desktop/agigi/School21/libftest/tests/Part1_functions/ft_strlcat/test03.output differ$
 
-Diff KO :(
+Diff OK :D
 = Test 4 ===================================================
 $> ./user_exe 04
 $> diff -U 3 user_output_test04 test04.output
@@ -1204,8 +1184,6 @@ Diff OK :D
 
 = ft_split =====================================================================
 $> norminette ft_split.c | grep -E '(Error|Warning)'
-Error (line 15): declarations in ft_strcount are bad aligned
-Norme check failed
 $> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Part2_functions/ft_split/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
 
 = Test 1 ===================================================
@@ -1348,10 +1326,6 @@ Diff OK :D
 
 = ft_lstclear ==================================================================
 $> norminette ft_lstclear.c | grep -E '(Error|Warning)'
-Error: file must end with a single empty line
-Error (line 19, col 1): missing space after while
-Error (line 28, col 0): no newline after block
-Norme check failed
 $> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Bonus_functions/ft_lstclear/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
 
 = Test 1 ===================================================
@@ -1397,8 +1371,6 @@ Diff OK :D
 
 = ft_lstmap ====================================================================
 $> norminette ft_lstmap.c | grep -E '(Error|Warning)'
-Error (line 15): Space before function name
-Norme check failed
 $> clang -Wextra -Wall -Werror /Users/agigi/Desktop/agigi/School21/libftest/tests/Bonus_functions/ft_lstmap/main.c -L/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir -lft -I/Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir
 
 = Test 1 ===================================================

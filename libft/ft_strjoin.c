@@ -6,7 +6,7 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 23:35:45 by agigi             #+#    #+#             */
-/*   Updated: 2020/11/10 20:10:51 by agigi            ###   ########.fr       */
+/*   Updated: 2020/11/11 19:40:31 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	if (!s1 || !s2)
 		return (NULL);
-	i = ft_strlen(s1 + ft_strlen(s2));
+	i = ft_strlen(s1) + ft_strlen(s2);
 	if (!(str = (char *)malloc(i + 1)))
 		return (NULL);
 	i = 0;
@@ -32,10 +32,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	j = 0;
 	while (s2[j])
 	{
-		str[i] = s2[j];
-		i++;
+		str[i + j] = s2[j];
 		j++;
 	}
-	str[i] = '\0';
+	str[i + j] = '\0';
 	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 18:07:31 by agigi             #+#    #+#             */
-/*   Updated: 2020/10/31 17:35:01 by agigi            ###   ########.fr       */
+/*   Updated: 2020/11/11 19:20:47 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memset(void *dest, int c, size_t n)
 {
 	unsigned char *str;
 
-	str = dest;
+	str = (unsigned char *)dest;
 	while (n--)
 		*str++ = (unsigned char)c;
 	return (dest);

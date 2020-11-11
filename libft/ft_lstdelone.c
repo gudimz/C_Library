@@ -6,7 +6,7 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/08 20:13:51 by agigi             #+#    #+#             */
-/*   Updated: 2020/11/08 20:27:18 by agigi            ###   ########.fr       */
+/*   Updated: 2020/11/11 18:31:56 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (!lst)
 		return ;
-	del(lst->content);
+	if (del)
+		del(lst->content);
 	free(lst);
 }

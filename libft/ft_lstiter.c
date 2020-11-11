@@ -6,7 +6,7 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/09 23:16:08 by agigi             #+#    #+#             */
-/*   Updated: 2020/11/09 23:21:41 by agigi            ###   ########.fr       */
+/*   Updated: 2020/11/11 18:39:42 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if (!lst || !f)
+	if (!f)
 		return ;
 	while (lst)
 	{

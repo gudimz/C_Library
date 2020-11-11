@@ -1,9 +1,9 @@
 = Host-specific information ====================================================
 $> hostname; uname -msr
-vo-i3.msk.21-school.ru
+ga-j5.msk.21-school.ru
 Darwin 18.7.0 x86_64
 $> date
-вторник, 10 ноября 2020 г. 23:30:25 (MSK)
+среда, 11 ноября 2020 г. 19:45:08 (MSK)
 $> gcc --version
 Apple clang version 11.0.0 (clang-1100.0.33.17)
 Target: x86_64-apple-darwin18.7.0
@@ -71,7 +71,7 @@ ar rc libft.a ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o ft_lstadd_
 ranlib libft.a
 
 $> ls -la libft.a
--rw-r--r--  1 agigi  student  39328 10 ноя 23:30 /Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir/libft.a
+-rw-r--r--  1 agigi  student  39296 11 ноя 19:45 /Users/agigi/Desktop/agigi/School21/libftest/tmp_tests_dir/libft.a
 
 = Part1_functions ==============================================================
 

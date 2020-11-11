@@ -6,7 +6,7 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 17:37:14 by agigi             #+#    #+#             */
-/*   Updated: 2020/11/01 18:50:04 by agigi            ###   ########.fr       */
+/*   Updated: 2020/11/11 17:59:42 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ void	*ft_calloc(size_t count, size_t size)
 
 	i = 0;
 	res_count = count * size;
-	mem = malloc(res_count);
-	if (mem == NULL)
+	if (!(mem = (char *)malloc(res_count)))
 		return (NULL);
 	while (res_count--)
 	{

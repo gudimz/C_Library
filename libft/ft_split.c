@@ -6,7 +6,7 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/07 01:23:32 by agigi             #+#    #+#             */
-/*   Updated: 2020/11/10 23:10:13 by agigi            ###   ########.fr       */
+/*   Updated: 2020/11/11 19:31:26 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static	size_t	ft_strcount(const char *str, char c)
 	return (count);
 }
 
-static	int		ft_strlen_spl(const char *str, char c)
+static	size_t	ft_strlen_spl(const char *str, char c)
 {
 	int	len;
 
@@ -60,6 +60,7 @@ char			**ft_split(char const *s, char c)
 	int		start;
 	int		i;
 	char	**arr;
+	size_t	len_next;
 
 	if (!s)
 		return (NULL);
@@ -72,7 +73,8 @@ char			**ft_split(char const *s, char c)
 	{
 		while (s[start] == c)
 			start++;
-		if (!(arr[i] = ft_substr(s, start, ft_strlen_spl(&s[start], c))))
+		len_next = ft_strlen_spl(&s[start], c);
+		if (!(arr[i] = ft_substr(s, start, len_next)))
 			return (ft_memclear(arr));
 		start += ft_strlen_spl(&s[start], c);
 		i++;

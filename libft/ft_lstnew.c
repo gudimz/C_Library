@@ -6,7 +6,7 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/08 12:37:02 by agigi             #+#    #+#             */
-/*   Updated: 2020/11/08 15:59:53 by agigi            ###   ########.fr       */
+/*   Updated: 2020/11/11 18:49:19 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list *new_elem;
 
-	if (!(new_elem = malloc(sizeof(t_list))))
+	if (!(new_elem = (t_list *)malloc(sizeof(t_list))))
 		return (NULL);
 	new_elem->content = content;
 	new_elem->next = NULL;

@@ -6,7 +6,7 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 19:30:13 by agigi             #+#    #+#             */
-/*   Updated: 2020/10/31 17:35:59 by agigi            ###   ########.fr       */
+/*   Updated: 2020/11/11 19:42:29 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,9 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t n)
 	{
 		while (src[i] != '\0' && n > 1)
 		{
-			if (n > 1)
-			{
-				dest[i] = src[i];
-				i++;
-				n--;
-			}
+			dest[i] = src[i];
+			i++;
+			n--;
 		}
 		if (n > 0)
 			dest[i] = '\0';

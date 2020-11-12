@@ -6,7 +6,7 @@
 #    By: agigi <agigi@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/29 19:22:08 by agigi             #+#    #+#              #
-#    Updated: 2020/11/11 20:25:19 by agigi            ###   ########.fr        #
+#    Updated: 2020/11/12 22:57:12 by agigi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,6 @@ all: $(NAME)
 $(NAME): $(OBJS)
 		ar rc $(NAME) $(OBJS)
 		ranlib ${NAME}
-		gcc $(CFLAGS) -c $(SRCS) 
 bonus:		$(NAME) $(OBJS_BONUS)
 		ar rc $(NAME) $(OBJS_BONUS)
 		ranlib ${NAME}

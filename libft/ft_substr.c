@@ -6,20 +6,20 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 21:33:50 by agigi             #+#    #+#             */
-/*   Updated: 2020/12/07 22:45:14 by agigi            ###   ########.fr       */
+/*   Updated: 2020/12/27 17:09:10 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	size_t ft_min(size_t num1, size_t num2)
+static size_t	ft_min(size_t num1, size_t num2)
 {
 	if (num1 > num2)
 		return (num2);
 	return (num1);
 }
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char			*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*sub;
 	char	*str;

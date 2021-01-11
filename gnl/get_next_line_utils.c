@@ -6,7 +6,7 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/14 16:45:51 by agigi             #+#    #+#             */
-/*   Updated: 2020/11/22 17:04:01 by agigi            ###   ########.fr       */
+/*   Updated: 2021/01/12 00:19:44 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ char	*ft_strdup(const char *s1)
 	return (tmp);
 }
 
-char	*ft_strjoin_free(char *s1, char const *s2)
+char	*ft_strjoin(char *s1, char const *s2)
 {
 	char	*str;
 	size_t	i;
@@ -70,7 +70,6 @@ char	*ft_strjoin_free(char *s1, char const *s2)
 		j++;
 	}
 	str[i + j] = '\0';
-	free(s1);
 	return (str);
 }
 

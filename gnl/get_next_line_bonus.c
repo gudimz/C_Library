@@ -6,13 +6,13 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 15:03:07 by agigi             #+#    #+#             */
-/*   Updated: 2020/11/22 17:01:02 by agigi            ###   ########.fr       */
+/*   Updated: 2021/01/12 01:13:21 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line_bonus.h"
+#include "get_next_line.h"
 
-static	int	ft_check_buf(char **s_buf, char **line, int fd)
+static int	ft_check_buf(char **s_buf, char **line, int fd)
 {
 	char *n;
 
@@ -33,6 +33,7 @@ static	int	ft_check_buf(char **s_buf, char **line, int fd)
 		{
 			*line = ft_strdup(s_buf[fd]);
 			free(s_buf[fd]);
+			s_buf[fd] = NULL;
 			return (1);
 		}
 	}
@@ -57,12 +58,11 @@ int			get_next_line(int fd, char **line)
 	static char	*s_buf[ARRAY_SIZE];
 	char		buffer[BUFFER_SIZE + 1];
 	int			flag;
+	char		*tmp;
 
 	if (!line || BUFFER_SIZE <= 0 || fd < 0)
 		return (-1);
 	flag = ft_check_buf(s_buf, line, fd);
-	if (flag)
-		s_buf[fd] = NULL;
 	while (flag && (ret = read(fd, buffer, BUFFER_SIZE)) > 0)
 	{
 		buffer[ret] = '\0';
@@ -73,8 +73,10 @@ int			get_next_line(int fd, char **line)
 				return (-1);
 			flag = 0;
 		}
-		if (!(*line = ft_strjoin_free(*line, buffer)))
+		tmp = *line;
+		if (!(*line = ft_strjoin(*line, buffer)))
 			return (-1);
+		free(tmp);
 	}
 	return (ft_check_read(ret, line, s_buf, fd));
 }

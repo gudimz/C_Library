@@ -6,7 +6,7 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 23:35:45 by agigi             #+#    #+#             */
-/*   Updated: 2020/11/12 23:07:50 by agigi            ###   ########.fr       */
+/*   Updated: 2021/05/01 16:34:58 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!s1 || !s2)
 		return (NULL);
 	i = ft_strlen(s1) + ft_strlen(s2);
-	if (!(str = (char *)malloc(i + 1)))
+	str = (char *)malloc(i + 1);
+	if (!str)
 		return (NULL);
 	i = 0;
 	while (s1[i])

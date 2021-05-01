@@ -6,7 +6,7 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/09 23:23:16 by agigi             #+#    #+#             */
-/*   Updated: 2020/11/12 23:08:52 by agigi            ###   ########.fr       */
+/*   Updated: 2021/05/01 16:20:28 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	copy_list = NULL;
 	while (lst && f)
 	{
-		if (!(cp_list = ft_lstnew(f(lst->content))))
+		cp_list = ft_lstnew(f(lst->content));
+		if (!cp_list)
 		{
 			ft_lstclear(&copy_list, del);
 			return (NULL);

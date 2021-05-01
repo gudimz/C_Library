@@ -6,7 +6,7 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 18:14:23 by agigi             #+#    #+#             */
-/*   Updated: 2020/11/12 23:07:23 by agigi            ###   ########.fr       */
+/*   Updated: 2021/05/01 16:36:09 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t i;
-	size_t j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	if (*little == '\0' || big == little)
-		return ((char*)big);
+		return ((char *)big);
 	if (ft_strlen(big) < ft_strlen(little))
 		return (NULL);
 	while (i < len)

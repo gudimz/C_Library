@@ -6,7 +6,7 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 21:12:21 by agigi             #+#    #+#             */
-/*   Updated: 2020/11/12 23:07:27 by agigi            ###   ########.fr       */
+/*   Updated: 2021/05/01 16:35:55 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strncmp(const char *str1, const char *str2, size_t n)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while ((str1[i] || str2[i]) && i < n)

@@ -6,7 +6,7 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 00:33:44 by agigi             #+#    #+#             */
-/*   Updated: 2021/05/01 16:39:29 by agigi            ###   ########.fr       */
+/*   Updated: 2021/06/13 02:08:17 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ char				*ft_strrchr(const char *str, int ch);
 char				*ft_strnstr(const char *big, const char *little, \
 					size_t len);
 int					ft_strncmp(const char *str1, const char *str2, size_t n);
+int					ft_strcmp(const char *str1, const char *str2)
 int					ft_atoi(const char *str);
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);

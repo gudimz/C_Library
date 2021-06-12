@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/08 12:37:02 by agigi             #+#    #+#             */
-/*   Updated: 2020/11/12 23:08:49 by agigi            ###   ########.fr       */
+/*   Created: 2020/11/07 00:40:00 by agigi             #+#    #+#             */
+/*   Updated: 2021/05/01 16:24:05 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+void	ft_putnbr_fd(int n, int fd)
 {
-	t_list *new_elem;
+	long	nb;
 
-	if (!(new_elem = (t_list *)malloc(sizeof(t_list))))
-		return (NULL);
-	new_elem->content = content;
-	new_elem->next = NULL;
-	return (new_elem);
+	nb = n;
+	if (nb < 0)
+	{
+		nb *= -1;
+		ft_putchar_fd('-', fd);
+	}
+	if (nb < 10)
+	{
+		ft_putchar_fd(nb + '0', fd);
+	}
+	else if (nb > 9)
+	{
+		ft_putnbr_fd(nb / 10, fd);
+		ft_putchar_fd(nb % 10 + '0', fd);
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 15:00:14 by agigi             #+#    #+#             */
-/*   Updated: 2021/01/12 01:12:36 by agigi            ###   ########.fr       */
+/*   Updated: 2021/07/02 20:14:34 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strchr(const char *str, int ch)
 {
-	size_t	i;
-	char	*s;
+	size_t		i;
+	char		*s;
 
 	i = 0;
 	s = (char *)str;
@@ -34,7 +34,8 @@ char	*ft_strdup(const char *s1)
 	size_t	count;
 
 	count = ft_strlen(s1);
-	if (!(tmp = (char *)malloc(count + 1)))
+	tmp = (char *)malloc(count + 1);
+	if (!tmp)
 		return (NULL);
 	count = 0;
 	while (s1[count])
@@ -55,7 +56,8 @@ char	*ft_strjoin(char *s1, char const *s2)
 	if (!s1 || !s2)
 		return (NULL);
 	i = ft_strlen(s1) + ft_strlen(s2);
-	if (!(str = (char *)malloc(i + 1)))
+	str = (char *)malloc(i + 1);
+	if (!str)
 		return (NULL);
 	i = 0;
 	while (s1[i])
@@ -75,7 +77,7 @@ char	*ft_strjoin(char *s1, char const *s2)
 
 size_t	ft_strlen(const char *str)
 {
-	size_t len;
+	size_t	len;
 
 	len = 0;
 	while (str[len])
@@ -85,7 +87,7 @@ size_t	ft_strlen(const char *str)
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t n)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	if (src == 0)

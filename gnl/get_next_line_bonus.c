@@ -6,7 +6,7 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 15:03:07 by agigi             #+#    #+#             */
-/*   Updated: 2021/01/12 01:13:21 by agigi            ###   ########.fr       */
+/*   Updated: 2021/07/02 20:03:48 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	ft_check_buf(char **s_buf, char **line, int fd)
 {
-	char *n;
+	char	*n;
 
 	if (!s_buf[fd])
 	{
@@ -23,7 +23,8 @@ static int	ft_check_buf(char **s_buf, char **line, int fd)
 	}
 	else
 	{
-		if ((n = ft_strchr(s_buf[fd], '\n')))
+		n = ft_strchr(s_buf[fd], '\n');
+		if (n)
 		{
 			*n++ = '\0';
 			*line = ft_strdup(s_buf[fd]);
@@ -52,7 +53,24 @@ static int	ft_check_read(int ret, char **line, char **s_buf, int fd)
 	return (1);
 }
 
-int			get_next_line(int fd, char **line)
+int	ft_check_n(char **s_buf, char *buffer, int fd)
+{
+	int	flag;
+
+	flag = 1;
+	s_buf[fd] = ft_strchr(buffer, '\n');
+	if (s_buf[fd])
+	{
+		*s_buf[fd]++ = '\0';
+		s_buf[fd] = ft_strdup(s_buf[fd]);
+		if (!s_buf[fd])
+			return (-1);
+		flag = 0;
+	}
+	return (flag);
+}
+
+int	get_next_line(int fd, char **line)
 {
 	int			ret;
 	static char	*s_buf[ARRAY_SIZE];
@@ -63,18 +81,16 @@ int			get_next_line(int fd, char **line)
 	if (!line || BUFFER_SIZE <= 0 || fd < 0)
 		return (-1);
 	flag = ft_check_buf(s_buf, line, fd);
-	while (flag && (ret = read(fd, buffer, BUFFER_SIZE)) > 0)
+	while (flag)
 	{
+		ret = read(fd, buffer, BUFFER_SIZE);
+		if (ret <= 0)
+			break ;
 		buffer[ret] = '\0';
-		if ((s_buf[fd] = ft_strchr(buffer, '\n')))
-		{
-			*s_buf[fd]++ = '\0';
-			if (!(s_buf[fd] = ft_strdup(s_buf[fd])))
-				return (-1);
-			flag = 0;
-		}
+		flag = ft_check_n(s_buf, buffer, fd);
 		tmp = *line;
-		if (!(*line = ft_strjoin(*line, buffer)))
+		*line = ft_strjoin(*line, buffer);
+		if (!(*line))
 			return (-1);
 		free(tmp);
 	}

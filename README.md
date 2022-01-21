@@ -5,7 +5,7 @@ In this library, I implemented functions from the standard C libraries.
 ## My library includes:
 
 * Libft
- * Stack (https://en.cppreference.com/w/cpp/container/stack)
+  * Stack (https://en.cppreference.com/w/cpp/container/stack)
 
 
 

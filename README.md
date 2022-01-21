@@ -4,40 +4,61 @@ In this library, I implemented functions from the standard C libraries.
 
 ## My library includes:
 
-* Libft
-  * ft_atoi
-  * ft_bzero
-  * *ft_calloc
-
-
-
-# <img src= "https://drive.google.com/uc?export=view&id=1aK82QDdsv3CKy1vBmG5CYrZijvs97h-D" width=200 height=200>
-
-## Instructions.
-
-This program simulates the work of pipes and redirects
-
-## Examples.
-
- `$> ./pipex infile ``ls -l'' ``wc -l'' outfile` should be the same as 
- 
- `“< infile ls -l | wc -l > outfile”`
- ***
-`$> ./pipex infile ``grep a1'' ``wc -w'' outfile` should be the same as 
-
-`“< infile grep a1 | wc -w > outfile”`
-
+* Libft:
+# <img src= "https://drive.google.com/uc?export=view&id=1Hufmn1TriUKX54k5FnXdXr6TtdEVapkL" width=200 height=200>
+  * atoi
+  * bzero
+  * calloc
+  * isalnum
+  * isalpha
+  * isascii
+  * isdigit
+  * isprint
+  * itoa
+  * lstadd_back
+  * lstadd_front
+  * lstclear
+  * lstdelone
+  * lstiter
+  * lstlast
+  * lastmap
+  * lstnew
+  * lstsize
+  * memccpy
+  * memchr
+  * memcmp
+  * memcpy
+  * memmove
+  * memset
+  * putchar_fd
+  * putendl_fd
+  * putnbr_fd
+  * putstr_fd
+  * split
+  * strchr
+  * strcmp
+  * strdup
+  * strjoin
+  * strlcat
+  * strlcpy
+  * strlen
+  * strmapi
+  * strncmp
+  * strnstr
+  * strrchr
+  * strtrim
+  * substr
+  * tolower
+  * toupper
+* ft_printf
+# <img src= "https://drive.google.com/uc?export=view&id=1cnWlkl8iUEpqOXxsan_YPId8_Xhh3hrZ" width=200 height=200>
+* get_next_line
+# <img src= "https://drive.google.com/uc?export=view&id=1Hufmn1TriUKX54k5FnXdXr6TtdEVapkL" width=200 height=200>
 
 ## How to use?
 
 `make`
 
-`$> ./pipex file1 cmd1 cmd2 file2`
-
-
-## How to use test?
-
-`make test`
 
 ## Good Luck!
 

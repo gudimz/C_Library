@@ -1,5 +1,7 @@
 # Library C
 
+My first C projects.
+
 In this library, I implemented functions from the standard C libraries.
 
 ## My library includes:
